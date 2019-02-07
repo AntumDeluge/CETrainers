@@ -19,6 +19,12 @@ local standalone = TrainerOrigin == nil
 -- create main window but do not show it yet
 local MainWindow = createForm(false)
 
+-- icon displayed in the main interface
+local icon = createPicture()
+icon.loadFromFile("data/bitmap/icon.png")
+MainWindow.Icon = icon.getBitmap()
+
+
 -- closes trainer
 local function shutdown()
 	-- free memory allocated for the main interface
