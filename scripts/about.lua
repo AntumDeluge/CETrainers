@@ -59,7 +59,7 @@ about.showDialog = function()
 
 	-- Cheat Engine info
 	local ceInfo = createLabel(panel)
-	ceInfo.setCaption("Made with Cheat Engine 6.8.1 by Dark Byte")
+	ceInfo.setCaption("Made with Cheat Engine " .. tostring(getCEVersion()) .. " by Dark Byte")
 	ceInfo.anchorSideLeft.control = panel
 	ceInfo.anchorSideLeft.side = asrCenter
 	ceInfo.anchorSideTop.control = version
