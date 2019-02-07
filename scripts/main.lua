@@ -1,4 +1,8 @@
 
+-- main table
+MMU = {}
+MMU.name = "MMU Trainer"
+
 -- trainer version
 ver = {}
 ver.maj = 0
@@ -40,7 +44,7 @@ local function shutdown()
 end
 
 -- text displayed in title bar
-MainWindow.setCaption("MMU Trainer")
+MainWindow.setCaption(MMU.name)
 
 
 --- START: Menu Bar ---

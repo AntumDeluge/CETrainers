@@ -9,7 +9,7 @@ about.showDialog = function()
 	-- dialog to display information about trainer
 	local aboutDialog = createForm(false)
 	aboutDialog.BorderStyle = bsDialog
-	aboutDialog.setCaption("About")
+	aboutDialog.setCaption("About " .. MMU.name)
 	aboutDialog.setSize(W, H)
 
 	-- main panel
