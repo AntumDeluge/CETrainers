@@ -122,7 +122,7 @@ else
 	MMU.processLabel.setCaption("Attached process:")
 end
 
-local addressList = getAddressList()
+local record = dofile("scripts/record.lua")
 
 local chkPanel = createPanel(MainWindow)
 chkPanel.anchorSideTop.control = MMU.processLabel
@@ -141,27 +141,33 @@ for _, c in pairs(checkBoxes) do
 end
 idx = nil
 
-checkBoxes["inv"].OnChange = function()
-	local enabled = checkBoxes["inv"].Checked
-	local record = addressList.getMemoryRecordByDescription("Invincibility")
-	record.Active = enabled
+local live = true
 
-	-- update check box in case of failure
-	if record.Active ~= enabled then
-		checkBoxes["inv"].Checked = record.Active
-		return
+checkBoxes["inv"].OnChange = function()
+	if live then
+		local enabled = checkBoxes["inv"].Checked
+		local ret = record.setEnabled("Invincibility", enabled)
+
+		-- update check box in case of failure
+		if ret ~= enabled then
+			live = false
+			checkBoxes["inv"].Checked = ret
+			live = true
+		end
 	end
 end
 
 checkBoxes["id"].OnChange = function()
-	local enabled = checkBoxes["id"].Checked
-	local record = addressList.getMemoryRecordByDescription("Instant Death")
-	record.Active = enabled
+	if live then
+		local enabled = checkBoxes["id"].Checked
+		local ret = record.setEnabled("Instant Death", enabled)
 
-	-- update check box in case of failure
-	if record.Active ~= enabled then
-		checkBoxes["id"].Checked = record.Active
-		return
+		-- update check box in case of failure
+		if ret ~= enabled then
+			live = false
+			checkBoxes["id"].Checked = ret
+			live = true
+		end
 	end
 end
 
