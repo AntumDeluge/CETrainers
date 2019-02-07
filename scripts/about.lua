@@ -58,8 +58,12 @@ about.showDialog = function()
 	version.BorderSpacing.top = 20
 
 	-- Cheat Engine info
+	local ceArch = "32"
+	if cheatEngineIs64Bit() then
+		ceArch = "64"
+	end
 	local ceInfo = createLabel(panel)
-	ceInfo.setCaption("Made with Cheat Engine " .. tostring(getCEVersion()) .. " by Dark Byte")
+	ceInfo.setCaption("Made with Cheat Engine " .. tostring(getCEVersion()) .. " " .. ceArch .. "-bit by Dark Byte")
 	ceInfo.anchorSideLeft.control = panel
 	ceInfo.anchorSideLeft.side = asrCenter
 	ceInfo.anchorSideTop.control = version
