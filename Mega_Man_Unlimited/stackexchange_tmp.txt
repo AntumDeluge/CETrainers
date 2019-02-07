@@ -1,0 +1,90 @@
+I am using FFmpeg's built-in ***gdigrab*** & ***dshow*** to record the display & audio of my system. I am encoding to uncompressed H.264/AVC video & uncompressed PCM/WAV audio.
+
+I had been having two problems with audio/video synchronization:
+
+1. Video & audio not aligned (video & audio do not start at same time).
+2. Audio drift (audio progressively becomes out of sync with video).
+
+Originally I was using a single command for capture/encode. Something like the following:
+
+```
+ffmpeg -hide_banner -rtbufsize 1000M -f gdigrab -framerate 60 -draw_mouse 0 \
+  -i "title=<window_name>" -f dshow -i audio="<sys_audio/mic>" -c:v libx264 \
+  -preset ultrafast -qp 0 -x264opts keyint=1 -c:a pcm_s16le -ac 1 "<out_file>.mkv"
+```
+
+But I was able to solve my second problem (drifting) by capturing video & audio in separate FFmpeg processes. Note that I am using a UNIX-like shell ([MSYS2](https://www.msys2.org/) with BASH). The following is an example of a shell script I am running:
+
+```
+# capture audio & get PID
+ffmpeg -hide_banner -rtbufsize 500M -f dshow -i audio="<sys_audio/mic>" \
+  -c:a pcm_s16le -ac 1 "<out_file>-audio.wav" & APID=$!
+
+# capture video
+ffmpeg -hide_banner -rtbufsize 1000M -f gdigrab -framerate 60 -draw_mouse 0 \
+  -i "<window_name>" -c:v libx264 -preset ultrafast -qp 0 -x264opts keyint=1 \
+  "<out_file>-video.mkv"
+
+# get exit code of video process
+VIDRET=$?
+
+# send interrupt signal to audio process after video process exits
+kill -s SIGINT ${APID}
+
+# mux video & audio if video process exited okay
+if [ "${VIDRET}" -eq "0" ]; then
+    ffmpeg -hide_banner -i "${OUTVID}" -i "${OUTAUD}" -map 0:0 -map 1:0 \
+      -c copy "<out_file>.mkv"
+
+    # delete temp video & audio streams if muxing succeeded
+    if [ "$?" -eq "0" ]; then
+        rm "${OUTVID}" "${OUTAUD}"
+    fi
+fi
+```
+
+So the problem left is that video & audio data do not start aligned correctly. The audio is generally somewhere between 0ms-300ms ahead of the video.
+
+It can be easily solved by running the output file through FFmpeg again, or a separate program such as [Avidemux](http://avidemux.sourceforge.net/), to adjust the audio delay. This can be done without re-encoding in Avidemux (not sure about FFmpeg).
+
+However, I would prefer to solve this issue within the capture process/script so I can avoid the extra step of aligning the data manually.
+
+Recently I have done a system cleanup by removing junk files, making sure fragmentation on my drive is low, & turning off unnecessary background processes. But audio/video alignment is still often off.
+
+So finally, to the plain-&-simple question: Is there a way to get the two FFmpeg processes to begin capture at the same time to get video & audio as close to being synchronized as possible? Can I use the system clock as a seed?
+
+Or, is there a better method than I am using right now? E.g., a single FFmpeg process that will capture both while keeping data aligned & avoiding audio drift.
+
+It appears to me that the problem is simply that the audio process is starting before the video process. I've heard about piping FFmpeg commands, but am not sure of the correct way to do it. I have found some information on piping that I am trying to figure out:
+
+- https://trac.ffmpeg.org/wiki/Creating%20multiple%20outputs#Pipedprocesses
+- https://superuser.com/questions/1057388/pipe-ffmpeg-output-to-other-process
+
+FFmpeg information: Official static 64-bit build from [Zeranoe](https://ffmpeg.zeranoe.com/builds/).
+
+```
+ffmpeg version N-92511-g0279cb4f69 Copyright (c) 2000-2018 the FFmpeg developers
+    built with gcc 8.2.1 (GCC) 20181017
+    configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig
+        --enable-gnutls --enable-iconv --enable-libass --enable-libbluray
+        --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb
+        --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine
+        --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame
+        --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264
+        --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib
+        --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc
+        --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom
+        --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va
+        --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth
+```
+
+These are my system specs:
+
+> - **Model:** [HP Pavilion 24-b217c](https://support.hp.com/us-en/document/c05381021)
+- **OS:** Windows 10 64-bit
+- **CPU:** [Intel Core i5-7400T @ 2.40GHz, 2401 MHz, 4 cores](https://ark.intel.com/products/97184)
+- **RAM:** 12GB
+- **GPU(s):**
+  - [nVidia GeForce 930MX](https://www.geforce.com/hardware/notebook-gpus/geforce-930mx/specifications)
+      - **RAM:** 2GB dedicated
+  - [Intel HD Graphics 630](https://www.intel.com/content/www/us/en/support/products/98909/graphics-drivers/graphics-for-7th-generation-intel-processors/intel-hd-graphics-630.html)
