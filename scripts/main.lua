@@ -112,6 +112,8 @@ MainWindow.setMenu(menuBar)
 MainWindow.onClose = shutdown
 
 MMU.processLabel = createLabel(MainWindow)
+MMU.processLabel.anchorSideLeft.control = MainWindow
+MMU.processLabel.anchorSideLeft.side = asrCenter
 
 local loadedProcess = getOpenedProcessID()
 if loadedProcess > 0 then
