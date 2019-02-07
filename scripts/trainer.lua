@@ -51,4 +51,5 @@ MainWindow.setMenu(menuBar)
 
 
 -- make main window visible
+MainWindow.centerScreen()
 MainWindow.show()
