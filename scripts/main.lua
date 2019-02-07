@@ -59,10 +59,14 @@ menuFile.setCaption("File")
 
 -- "Open" menu item
 local miOpen = createMenuItem(menuFile)
-miOpen.setCaption("Open")
+miOpen.setCaption("Open Process")
 miOpen.ShortCut = 16463
 miOpen.onClick = function()
 end
+
+local bmpOpen = createPicture()
+bmpOpen.loadFromFile("data/bitmap/menu/process.png")
+miOpen.Bitmap = bmpOpen.getBitmap()
 
 -- "Quit" menu item
 local miQuit = createMenuItem(menuFile)
