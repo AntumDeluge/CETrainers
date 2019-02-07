@@ -53,7 +53,17 @@ miOpen.ShortCut = 16463
 miOpen.onClick = function()
 end
 
+-- "Quit" menu item
+local miQuit = createMenuItem(menuFile)
+miQuit.setCaption("Quit")
+miQuit.onClick = shutdown
+
+local bmpQuit = createPicture()
+bmpQuit.loadFromFile("data/bitmap/menu/quit.png")
+miQuit.Bitmap = bmpQuit.getBitmap()
+
 menuFile.add(miOpen)
+menuFile.add(miQuit)
 
 -- "Help" main menu
 local menuHelp = createMenuItem(menuBar)
