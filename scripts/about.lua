@@ -46,7 +46,11 @@ about.showDialog = function()
 	author.BorderSpacing.top = 20
 
 	local version = createLabel(panel)
-	version.setCaption("Version: " .. ver.full)
+	if UNSTABLE then
+		version.setCaption("This software is unstable and likely will not work correctly")
+	else
+		version.setCaption("Version: " .. ver.full)
+	end
 	version.anchorSideLeft.control = panel
 	version.anchorSideLeft.side = asrCenter
 	version.anchorSideTop.control = author
