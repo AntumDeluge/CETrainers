@@ -18,7 +18,7 @@ end
 UNSTABLE = true
 
 -- run as standalone executable
-local standalone = TrainerOrigin == nil
+local standalone = TrainerOrigin ~= nil
 
 -- create main window but do not show it yet
 MainWindow = createForm(false)
