@@ -17,7 +17,8 @@ UNSTABLE = true
 local standalone = TrainerOrigin == nil
 
 -- create main window but do not show it yet
-local MainWindow = createForm(false)
+MainWindow = createForm(false)
+MainWindow.BorderStyle = bsSizeable
 
 -- icon displayed in the main interface
 local icon = createPicture()
