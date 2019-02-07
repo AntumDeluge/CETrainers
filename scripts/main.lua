@@ -122,6 +122,49 @@ else
 	MMU.processLabel.setCaption("Attached process:")
 end
 
+local addressList = getAddressList()
+
+local chkPanel = createPanel(MainWindow)
+chkPanel.anchorSideTop.control = MMU.processLabel
+chkPanel.anchorSideTop.side = asrBottom
+
+local checkBoxes = {}
+checkBoxes["inv"] = createCheckBox(chkPanel)
+checkBoxes["inv"].setCaption("Invincible")
+checkBoxes["id"] = createCheckBox(chkPanel)
+checkBoxes["id"].setCaption("Instant Death")
+
+local idx = 0
+for _, c in pairs(checkBoxes) do
+	c.setPosition(10, idx * 20)
+	idx = idx + 1
+end
+idx = nil
+
+checkBoxes["inv"].OnChange = function()
+	local enabled = checkBoxes["inv"].Checked
+	local record = addressList.getMemoryRecordByDescription("Invincibility")
+	record.Active = enabled
+
+	-- update check box in case of failure
+	if record.Active ~= enabled then
+		checkBoxes["inv"].Checked = record.Active
+		return
+	end
+end
+
+checkBoxes["id"].OnChange = function()
+	local enabled = checkBoxes["id"].Checked
+	local record = addressList.getMemoryRecordByDescription("Instant Death")
+	record.Active = enabled
+
+	-- update check box in case of failure
+	if record.Active ~= enabled then
+		checkBoxes["id"].Checked = record.Active
+		return
+	end
+end
+
 -- make main window visible
 MainWindow.centerScreen()
 MainWindow.show()
