@@ -49,6 +49,7 @@ menuFile.setCaption("File")
 -- "Open" menu item
 local miOpen = createMenuItem(menuFile)
 miOpen.setCaption("Open")
+miOpen.ShortCut = 16463
 miOpen.onClick = function()
 end
 
