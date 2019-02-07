@@ -1,282 +1,211 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:ns1="http://sozi.baierouge.fr"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    id="svg3977"
-    sodipodi:docname="pitr_Toy_train_icon.svg"
-    viewBox="0 0 128 128"
-    sodipodi:version="0.32"
-    version="1.0"
-    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-    inkscape:version="0.46"
-  >
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3977"
+   sodipodi:docname="icon.svg"
+   viewBox="0 0 24 24.000001"
+   sodipodi:version="0.32"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   width="24"
+   height="24">
+  <defs
+     id="defs22" />
   <sodipodi:namedview
-      id="base"
-      bordercolor="#666666"
-      inkscape:pageshadow="2"
-      guidetolerance="2"
-      pagecolor="#ffffff"
-      gridtolerance="10000"
-      inkscape:snap-global="false"
-      inkscape:window-width="1013"
-      inkscape:zoom="2.9775825"
-      objecttolerance="10000"
-      inkscape:window-height="720"
-      showgrid="true"
-      borderopacity="1.0"
-      inkscape:current-layer="layer1"
-      inkscape:cx="115.12294"
-      inkscape:cy="64"
-      inkscape:window-y="1"
-      inkscape:window-x="152"
-      borderlayer="true"
-      inkscape:pageopacity="0.0"
-      inkscape:document-units="px"
-    >
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     guidetolerance="2"
+     pagecolor="#ffffff"
+     gridtolerance="10000"
+     inkscape:snap-global="false"
+     inkscape:window-width="1920"
+     inkscape:zoom="8.4218751"
+     objecttolerance="10000"
+     inkscape:window-height="1025"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="43.241005"
+     inkscape:cy="27.053714"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     borderlayer="true"
+     inkscape:pageopacity="0.0"
+     inkscape:document-units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-maximized="1">
     <inkscape:grid
-        id="grid3987"
-        visible="true"
-        type="xygrid"
-        enabled="true"
-        empspacing="4"
-    />
-  </sodipodi:namedview
-  >
+       id="grid3987"
+       visible="true"
+       type="xygrid"
+       enabled="true"
+       empspacing="4"
+       originx="-54.08"
+       originy="-46.463477" />
+  </sodipodi:namedview>
   <g
-      id="layer1"
-      inkscape:label="Layer 1"
-      inkscape:groupmode="layer"
-    >
-    <path
-        id="path2399"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:12;fill:#0000ff"
-        d="m72 24.656c-2.216 0-4 1.784-4 4v3.344c0 2.216 1.784 4 4 4h1.25c-0.748 0.504-1.25 1.368-1.25 2.344v24.937c0-2.216-1.784-4-4-4h-20v-21.125c0-1.195-0.961-2.156-2.156-2.156h-11.938c-1.195 0-2.156 0.961-2.156 2.156v21.125h-11.344c-2.216 0-4 1.784-4 4v20.719c0 2.216 1.784 4 4 4h-0.406c-2.216 0-4 1.784-4 4v8c0 2.22 1.784 4 4 4h2.5v0.12c0 6.57 5.31 11.91 11.875 11.91s11.906-5.34 11.906-11.91c0-0.04 0.001-0.08 0-0.12h3.75v0.12c0 6.57 5.342 11.91 11.907 11.91 6.564 0 11.874-5.34 11.874-11.91 0-0.04 0.001-0.08 0-0.12h4.126c1.276 6.97 7.378 12.25 14.718 12.25s13.444-5.28 14.724-12.25h0.62c2.22 0 4-1.78 4-4v-8c0-2.216-1.78-4-4-4h0.34c1.56 0 2.82-1.251 2.82-2.812v-46.844c0-0.976-0.51-1.84-1.25-2.344h2.25c2.21 0 4-1.784 4-4v-3.344c0-2.216-1.79-4-4-4h-40.16z"
-    />
-    <path
-        id="path2397"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:12;fill:#0000ff"
-        d="m81.219 44h21.061c0.98 0 1.75 0.77 1.75 1.75v20.25c0 0.98-0.77 1.781-1.75 1.781h-21.061c-0.98 0-1.75-0.801-1.75-1.781v-20.25c0-0.98 0.77-1.75 1.75-1.75z"
-    />
-    <path
-        id="path2395"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:12;fill:#0000ff"
-        d="m72 84v1.188c0 1.561 1.251 2.812 2.812 2.812h-6.812c2.216 0 4-1.784 4-4z"
-    />
-    <rect
-        id="rect4509"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:3;fill:#0000ff"
-        rx="2.1584"
-        transform="rotate(90)"
-        height="16.259"
-        width="51.801"
-        y="-48"
-        x="36"
-    />
-    <rect
-        id="rect3989"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:3;fill:#e9c6af"
-        rx="4"
-        height="16"
-        width="96"
-        y="88"
-        x="16"
-    />
-    <rect
-        id="rect4500"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:3;fill:#00ff00"
-        rx="4"
-        height="28.73"
-        width="55.592"
-        y="59.27"
-        x="16.408"
-    />
-    <rect
-        id="rect4504"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:3;fill:#ff0000"
-        rx="4"
-        height="11.333"
-        width="48.157"
-        y="23.66"
-        x="68"
-    />
-    <path
-        id="rect4511"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:3;fill:#ffff00"
-        d="m74.812 35.531c-1.561 0-2.812 1.252-2.812 2.813v46.844c0 1.561 1.251 2.812 2.812 2.812h33.528c1.56 0 2.82-1.251 2.82-2.812v-46.844c0-1.561-1.26-2.813-2.82-2.813h-33.528zm6.407 8.469h21.061c0.98 0 1.75 0.77 1.75 1.75v20.25c0 0.98-0.77 1.781-1.75 1.781h-21.061c-0.98 0-1.75-0.801-1.75-1.781v-20.25c0-0.98 0.77-1.75 1.75-1.75z"
-    />
-    <path
-        id="path4513"
-        sodipodi:rx="14"
-        sodipodi:ry="14"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:3.7401;fill:#ff0000"
-        sodipodi:type="arc"
-        d="m108 110a14 14 0 1 1 -28 0 14 14 0 1 1 28 0z"
-        transform="matrix(1.0695 0 0 1.0695 -7.8749 -16.36)"
-        sodipodi:cy="110"
-        sodipodi:cx="94"
-    />
-    <path
-        id="path4515"
-        sodipodi:rx="14"
-        sodipodi:ry="14"
-        style="fill-rule:evenodd;fill:#000000"
-        sodipodi:type="arc"
-        d="m108 110a14 14 0 1 1 -28 0 14 14 0 1 1 28 0z"
-        transform="matrix(.53474 0 0 .53474 42.391 42.461)"
-        sodipodi:cy="110"
-        sodipodi:cx="94"
-    />
-    <path
-        id="path4523"
-        sodipodi:rx="14"
-        sodipodi:ry="14"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:4.7089;fill:#ff0000"
-        sodipodi:type="arc"
-        d="m108 110a14 14 0 1 1 -28 0 14 14 0 1 1 28 0z"
-        transform="matrix(.84945 0 0 .84945 -45.46 10.698)"
-        sodipodi:cy="110"
-        sodipodi:cx="94"
-    />
-    <path
-        id="path4525"
-        sodipodi:rx="14"
-        sodipodi:ry="14"
-        style="fill-rule:evenodd;fill:#000000"
-        sodipodi:type="arc"
-        d="m108 110a14 14 0 1 1 -28 0 14 14 0 1 1 28 0z"
-        transform="matrix(.42472 0 0 .42472 -5.5363 57.418)"
-        sodipodi:cy="110"
-        sodipodi:cx="94"
-    />
-    <path
-        id="path4529"
-        sodipodi:rx="14"
-        sodipodi:ry="14"
-        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-linecap:round;stroke-width:4.7089;fill:#ff0000"
-        sodipodi:type="arc"
-        d="m108 110a14 14 0 1 1 -28 0 14 14 0 1 1 28 0z"
-        transform="matrix(.84945 0 0 .84945 -17.921 10.698)"
-        sodipodi:cy="110"
-        sodipodi:cx="94"
-    />
-    <path
-        id="path4531"
-        sodipodi:rx="14"
-        sodipodi:ry="14"
-        style="fill-rule:evenodd;fill:#000000"
-        sodipodi:type="arc"
-        d="m108 110a14 14 0 1 1 -28 0 14 14 0 1 1 28 0z"
-        transform="matrix(.42472 0 0 .42472 22.003 57.418)"
-        sodipodi:cy="110"
-        sodipodi:cx="94"
-    />
-  </g
-  >
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(-54.08,-57.536524)">
+    <g
+       id="g4532"
+       transform="matrix(0.21398003,0,0,0.21398003,51.9402,54.460989)">
+      <path
+         d="m 72,24.656 c -2.216,0 -4,1.784 -4,4 V 32 c 0,2.216 1.784,4 4,4 h 1.25 C 72.502,36.504 72,37.368 72,38.344 v 24.937 c 0,-2.216 -1.784,-4 -4,-4 H 48 V 38.156 C 48,36.961 47.039,36 45.844,36 H 33.906 c -1.195,0 -2.156,0.961 -2.156,2.156 V 59.281 H 20.406 c -2.216,0 -4,1.784 -4,4 V 84 c 0,2.216 1.784,4 4,4 H 20 c -2.216,0 -4,1.784 -4,4 v 8 c 0,2.22 1.784,4 4,4 h 2.5 v 0.12 c 0,6.57 5.31,11.91 11.875,11.91 6.565,0 11.906,-5.34 11.906,-11.91 0,-0.04 10e-4,-0.08 0,-0.12 h 3.75 v 0.12 c 0,6.57 5.342,11.91 11.907,11.91 6.564,0 11.874,-5.34 11.874,-11.91 0,-0.04 0.001,-0.08 0,-0.12 h 4.126 c 1.276,6.97 7.378,12.25 14.718,12.25 7.34,0 13.444,-5.28 14.724,-12.25 H 108 c 2.22,0 4,-1.78 4,-4 v -8 c 0,-2.216 -1.78,-4 -4,-4 h 0.34 c 1.56,0 2.82,-1.251 2.82,-2.812 V 38.344 c 0,-0.976 -0.51,-1.84 -1.25,-2.344 h 2.25 c 2.21,0 4,-1.784 4,-4 v -3.344 c 0,-2.216 -1.79,-4 -4,-4 z"
+         style="fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round"
+         id="path2399"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 81.219,44 h 21.061 c 0.98,0 1.75,0.77 1.75,1.75 V 66 c 0,0.98 -0.77,1.781 -1.75,1.781 H 81.219 c -0.98,0 -1.75,-0.801 -1.75,-1.781 V 45.75 c 0,-0.98 0.77,-1.75 1.75,-1.75 z"
+         style="fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round"
+         id="path2397"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 72,84 v 1.188 C 72,86.749 73.251,88 74.812,88 H 68 c 2.216,0 4,-1.784 4,-4 z"
+         style="fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round"
+         id="path2395"
+         inkscape:connector-curvature="0" />
+      <rect
+         x="36"
+         y="-48"
+         width="51.800999"
+         height="16.259001"
+         transform="rotate(90)"
+         rx="2.1584001"
+         style="fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+         id="rect4509" />
+      <rect
+         x="16"
+         y="88"
+         width="96"
+         height="16"
+         rx="4"
+         style="fill:#e9c6af;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+         id="rect3989" />
+      <rect
+         x="16.408001"
+         y="59.27"
+         width="55.591999"
+         height="28.73"
+         rx="4"
+         style="fill:#00ff00;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+         id="rect4500" />
+      <rect
+         x="68"
+         y="23.66"
+         width="48.157001"
+         height="11.333"
+         rx="4"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+         id="rect4504" />
+      <path
+         d="M 74.812,35.531 C 73.251,35.531 72,36.783 72,38.344 V 85.188 C 72,86.749 73.251,88 74.812,88 h 33.528 c 1.56,0 2.82,-1.251 2.82,-2.812 V 38.344 c 0,-1.561 -1.26,-2.813 -2.82,-2.813 z M 81.219,44 h 21.061 c 0.98,0 1.75,0.77 1.75,1.75 V 66 c 0,0.98 -0.77,1.781 -1.75,1.781 H 81.219 c -0.98,0 -1.75,-0.801 -1.75,-1.781 V 45.75 c 0,-0.98 0.77,-1.75 1.75,-1.75 z"
+         style="fill:#ffff00;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+         id="rect4511"
+         inkscape:connector-curvature="0" />
+      <circle
+         transform="matrix(1.0695,0,0,1.0695,-7.8749,-16.36)"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:3.74009991;stroke-linecap:round;stroke-linejoin:round"
+         id="path4513"
+         cx="94"
+         cy="110"
+         r="14" />
+      <circle
+         transform="matrix(0.53474,0,0,0.53474,42.391,42.461)"
+         style="fill:#000000;fill-rule:evenodd"
+         id="path4515"
+         cx="94"
+         cy="110"
+         r="14" />
+      <circle
+         transform="matrix(0.84945,0,0,0.84945,-45.46,10.698)"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:4.70889997;stroke-linecap:round;stroke-linejoin:round"
+         id="path4523"
+         cx="94"
+         cy="110"
+         r="14" />
+      <circle
+         transform="matrix(0.42472,0,0,0.42472,-5.5363,57.418)"
+         style="fill:#000000;fill-rule:evenodd"
+         id="path4525"
+         cx="94"
+         cy="110"
+         r="14" />
+      <circle
+         transform="matrix(0.84945,0,0,0.84945,-17.921,10.698)"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:4.70889997;stroke-linecap:round;stroke-linejoin:round"
+         id="path4529"
+         cx="94"
+         cy="110"
+         r="14" />
+      <circle
+         transform="matrix(0.42472,0,0,0.42472,22.003,57.418)"
+         style="fill:#000000;fill-rule:evenodd"
+         id="path4531"
+         cx="94"
+         cy="110"
+         r="14" />
+    </g>
+  </g>
   <metadata
-    >
-    <rdf:RDF
-      >
-      <cc:Work
-        >
-        <dc:format
-          >image/svg+xml</dc:format
-        >
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
         <dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
-        />
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <cc:license
-            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
-        />
-        <dc:publisher
-          >
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
           <cc:Agent
-              rdf:about="http://openclipart.org/"
-            >
-            <dc:title
-              >Openclipart</dc:title
-            >
-          </cc:Agent
-          >
-        </dc:publisher
-        >
-        <dc:title
-          >Toy train icon</dc:title
-        >
-        <dc:date
-          >2009-03-18T12:53:11</dc:date
-        >
-        <dc:description
-        />
-        <dc:source
-          >https://openclipart.org/detail/22533/toy-train-icon-by-pitr</dc:source
-        >
-        <dc:creator
-          >
-          <cc:Agent
-            >
-            <dc:title
-              >pitr</dc:title
-            >
-          </cc:Agent
-          >
-        </dc:creator
-        >
-        <dc:subject
-          >
-          <rdf:Bag
-            >
-            <rdf:li
-              >choochoo</rdf:li
-            >
-            <rdf:li
-              >contour</rdf:li
-            >
-            <rdf:li
-              >icon</rdf:li
-            >
-            <rdf:li
-              >locomotive</rdf:li
-            >
-            <rdf:li
-              >toy</rdf:li
-            >
-            <rdf:li
-              >train</rdf:li
-            >
-            <rdf:li
-              >wooden</rdf:li
-            >
-          </rdf:Bag
-          >
-        </dc:subject
-        >
-      </cc:Work
-      >
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Toy train icon</dc:title>
+        <dc:date>2009-03-18T12:53:11</dc:date>
+        <dc:description />
+        <dc:source>https://openclipart.org/detail/22533/toy-train-icon-by-pitr</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>pitr</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>choochoo</rdf:li>
+            <rdf:li>contour</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>locomotive</rdf:li>
+            <rdf:li>toy</rdf:li>
+            <rdf:li>train</rdf:li>
+            <rdf:li>wooden</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
       <cc:License
-          rdf:about="http://creativecommons.org/licenses/publicdomain/"
-        >
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
         <cc:permits
-            rdf:resource="http://creativecommons.org/ns#Reproduction"
-        />
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
         <cc:permits
-            rdf:resource="http://creativecommons.org/ns#Distribution"
-        />
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
         <cc:permits
-            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
-        />
-      </cc:License
-      >
-    </rdf:RDF
-    >
-  </metadata
-  >
-</svg
->
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
