@@ -62,6 +62,11 @@ local miOpen = createMenuItem(menuFile)
 miOpen.setCaption("Open Process")
 miOpen.ShortCut = 16463
 miOpen.onClick = function()
+	local process = dofile("scripts/process.lua")
+	local PID = process.attach()
+	if PID ~= nil then
+		MMU.processLabel.setCaption("Attached process: " .. tostring(PID))
+	end
 end
 
 local bmpOpen = createPicture()
@@ -105,6 +110,15 @@ MainWindow.setMenu(menuBar)
 
 -- action to take when "X-ed" out of
 MainWindow.onClose = shutdown
+
+MMU.processLabel = createLabel(MainWindow)
+
+local loadedProcess = getOpenedProcessID()
+if loadedProcess > 0 then
+	MMU.processLabel.setCaption("Attached process: " .. tostring(loadedProcess))
+else
+	MMU.processLabel.setCaption("Attached process:")
+end
 
 -- make main window visible
 MainWindow.centerScreen()
