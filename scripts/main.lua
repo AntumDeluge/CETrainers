@@ -162,5 +162,6 @@ end
 idx = nil
 
 -- make main window visible
+MainWindow.ShowInTaskBar = "stAlways"
 MainWindow.centerScreen()
 MainWindow.show()
