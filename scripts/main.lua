@@ -124,7 +124,19 @@ end
 
 local record = dofile("scripts/record.lua")
 
-local chkPanel = createPanel(MainWindow)
+local tabs = createPageControl(MainWindow)
+tabs.anchorSideTop.control = MMU.processLabel
+tabs.anchorSideTop.side = asrBottom
+--tabs.Left = 5
+tabs.Align = alBottom
+
+local tabMain = tabs.addTab()
+tabMain.setCaption("Main")
+
+local tabExt = tabs.addTab()
+tabExt.setCaption("Extended")
+
+local chkPanel = createPanel(tabMain)
 chkPanel.AutoSize = true
 chkPanel.Left = 5
 chkPanel.anchorSideTop.control = MMU.processLabel
