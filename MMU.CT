@@ -4,7 +4,6 @@
     <CheatEntry>
       <ID>56</ID>
       <Description>"Lives"</Description>
-      <LastState Value="2" RealAddress="0019FC64"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -24,7 +23,6 @@
     <CheatEntry>
       <ID>36</ID>
       <Description>"Energy Display"</Description>
-      <LastState Value="6908088" RealAddress="120F0108"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"THREADSTACK0"-0000051C</Address>
       <Offsets>
@@ -37,7 +35,6 @@
     <CheatEntry>
       <ID>84</ID>
       <Description>"Screws"</Description>
-      <LastState Value="30" RealAddress="0019FC5C"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"THREADSTACK0"-00000954</Address>
       <Offsets>
@@ -47,7 +44,6 @@
     <CheatEntry>
       <ID>96</ID>
       <Description>"Energy Tank"</Description>
-      <LastState Value="0" RealAddress="0019FC54"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -57,7 +53,6 @@
     <CheatEntry>
       <ID>93</ID>
       <Description>"Energy Tank (small)"</Description>
-      <LastState Value="0" RealAddress="0019FC60"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -67,7 +62,6 @@
     <CheatEntry>
       <ID>99</ID>
       <Description>"Weapon Tank"</Description>
-      <LastState Value="0" RealAddress="0019FC58"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -77,7 +71,6 @@
     <CheatEntry>
       <ID>103</ID>
       <Description>"Eddie Call"</Description>
-      <LastState Value="0" RealAddress="0019FC48"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -87,7 +80,6 @@
     <CheatEntry>
       <ID>106</ID>
       <Description>"Beat Call"</Description>
-      <LastState Value="0" RealAddress="0019FC44"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -97,7 +89,6 @@
     <CheatEntry>
       <ID>109</ID>
       <Description>"Shock Guard"</Description>
-      <LastState Value="0" RealAddress="0019FC4C"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -107,7 +98,6 @@
     <CheatEntry>
       <ID>112</ID>
       <Description>"Energy Balancer"</Description>
-      <LastState Value="0" RealAddress="0019FC50"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -118,13 +108,11 @@
       <ID>80</ID>
       <Description>"Weapons/Tools"</Description>
       <Options moRecursiveSetValue="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
-      <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>122</ID>
           <Description>"Comet Dash"</Description>
-          <LastState Value="28" RealAddress="02670588"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -136,7 +124,6 @@
         <CheatEntry>
           <ID>118</ID>
           <Description>"Glue Shot"</Description>
-          <LastState Value="28" RealAddress="026705A8"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -149,7 +136,6 @@
         <CheatEntry>
           <ID>79</ID>
           <Description>"Jet Missile"</Description>
-          <LastState Value="28" RealAddress="026704C8"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -161,7 +147,6 @@
         <CheatEntry>
           <ID>135</ID>
           <Description>"Nail Shield"</Description>
-          <LastState Value="28" RealAddress="02670528"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -174,7 +159,6 @@
         <CheatEntry>
           <ID>116</ID>
           <Description>"Nitro Blast"</Description>
-          <LastState Value="28" RealAddress="02670708"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -188,7 +172,6 @@
         <CheatEntry>
           <ID>120</ID>
           <Description>"Rainbow Beam"</Description>
-          <LastState Value="28" RealAddress="026706A8"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -201,7 +184,6 @@
         <CheatEntry>
           <ID>128</ID>
           <Description>"Rush Coil"</Description>
-          <LastState Value="28" RealAddress="026704E8"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -214,7 +196,6 @@
         <CheatEntry>
           <ID>126</ID>
           <Description>"Rush Jet"</Description>
-          <LastState Value="28" RealAddress="026705C8"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -227,7 +208,6 @@
         <CheatEntry>
           <ID>88</ID>
           <Description>"Tank Arsenal"</Description>
-          <LastState Value="28" RealAddress="026704A8"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -241,7 +221,6 @@
         <CheatEntry>
           <ID>130</ID>
           <Description>"Water Cannon"</Description>
-          <LastState Value="28" RealAddress="02670768"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -255,7 +234,6 @@
         <CheatEntry>
           <ID>124</ID>
           <Description>"Yo-Yo Cutter"</Description>
-          <LastState Value="28" RealAddress="02670748"/>
           <VariableType>Float</VariableType>
           <Address>"THREADSTACK0"-000002A8</Address>
           <Offsets>
@@ -269,7 +247,6 @@
         <CheatEntry>
           <ID>174</ID>
           <Description>"Yoku script"</Description>
-          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -330,7 +307,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>230</ID>
       <Description>"All Bosses"</Description>
-      <LastState Value="1 0 0 0 0 0 0 0 0 0 0 1 1" RealAddress="02567ED8"/>
       <VariableType>Array of byte</VariableType>
       <ByteLength>13</ByteLength>
       <Address>"THREADSTACK0"-000002F8</Address>
@@ -342,13 +318,11 @@ dealloc(newmem)
       <ID>215</ID>
       <Description>"Defeated Bosses / Tools"</Description>
       <Options moRecursiveSetValue="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
-      <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>231</ID>
           <Description>"Buster"</Description>
-          <LastState Value="1" RealAddress="02567ED8"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -358,7 +332,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>241</ID>
           <Description>"Rush Coil"</Description>
-          <LastState Value="1" RealAddress="02567EE3"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -368,7 +341,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>240</ID>
           <Description>"Rush Jet"</Description>
-          <LastState Value="0" RealAddress="02567EE2"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -378,7 +350,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>214</ID>
           <Description>"Comet Woman"</Description>
-          <LastState Value="0" RealAddress="02567EE0"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -388,7 +359,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>237</ID>
           <Description>"Glue Man"</Description>
-          <LastState Value="0" RealAddress="02567EDE"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -398,7 +368,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>233</ID>
           <Description>"Jet Man"</Description>
-          <LastState Value="0" RealAddress="02567ED9"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -408,7 +377,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>235</ID>
           <Description>"Nail Man"</Description>
-          <LastState Value="0" RealAddress="02567EDB"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -418,7 +386,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>238</ID>
           <Description>"Rainbow Man"</Description>
-          <LastState Value="0" RealAddress="02567EDF"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -428,7 +395,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>234</ID>
           <Description>"Tank Man"</Description>
-          <LastState Value="0" RealAddress="02567EDA"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -438,7 +404,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>218</ID>
           <Description>"Trinitro Man"</Description>
-          <LastState Value="0" RealAddress="02567EDC"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -448,7 +413,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>239</ID>
           <Description>"Yo-Yo man"</Description>
-          <LastState Value="0" RealAddress="02567EE1"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -458,7 +422,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>236</ID>
           <Description>"Yoku Man"</Description>
-          <LastState Value="0" RealAddress="02567EDD"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -468,7 +431,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>232</ID>
           <Description>"Whirlpool Man"</Description>
-          <LastState Value="1" RealAddress="02567EE4"/>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -480,7 +442,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>246</ID>
       <Description>"Wily Stage"</Description>
-      <LastState Value="0" RealAddress="0019FC7C"/>
       <VariableType>Byte</VariableType>
       <Address>"MMU.exe"+002C55A0</Address>
       <Offsets>
@@ -503,7 +464,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>270</ID>
       <Description>"Energy/Weapon/Tool Display"</Description>
-      <LastState Value="00 00" RealAddress="120F0114"/>
       <ShowAsHex>1</ShowAsHex>
       <VariableType>Array of byte</VariableType>
       <ByteLength>2</ByteLength>
@@ -515,7 +475,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>133</ID>
       <Description>"Instant Death"</Description>
-      <LastState Activated="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -559,7 +518,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>261</ID>
       <Description>"Infinite Lives"</Description>
-      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -606,7 +564,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>178</ID>
       <Description>"Infinite Weapon Energy"</Description>
-      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -651,7 +608,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>179</ID>
       <Description>"Invincibility"</Description>
-      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -706,7 +662,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>259</ID>
       <Description>"10+ Lives"</Description>
-      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -754,7 +709,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>260</ID>
       <Description>"Auto End Stage"</Description>
-      <LastState Activated="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : Mega Man Unlimited
   Version: 1.3.1
@@ -799,7 +753,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>207</ID>
       <Description>"Gravity"</Description>
-      <LastState Value="44" RealAddress="006C559B"/>
       <ShowAsHex>1</ShowAsHex>
       <VariableType>Byte</VariableType>
       <Address>MMU.exe+2C559B</Address>
@@ -807,14 +760,12 @@ dealloc(newmem)
     <CheatEntry>
       <ID>210</ID>
       <Description>"Gravity"</Description>
-      <LastState Value="68" RealAddress="006C559B"/>
       <VariableType>Byte</VariableType>
       <Address>MMU.exe+2C559B</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>208</ID>
       <Description>"Jump Height"</Description>
-      <LastState Value="77" RealAddress="006C559A"/>
       <ShowAsHex>1</ShowAsHex>
       <VariableType>Byte</VariableType>
       <Address>MMU.exe+2C559A</Address>
@@ -822,7 +773,6 @@ dealloc(newmem)
     <CheatEntry>
       <ID>209</ID>
       <Description>"Jump Height"</Description>
-      <LastState Value="119" RealAddress="006C559A"/>
       <VariableType>Byte</VariableType>
       <Address>MMU.exe+2C559A</Address>
     </CheatEntry>
