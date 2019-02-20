@@ -829,6 +829,25 @@ dealloc(newmem)
 
 </AssemblerScript>
     </CheatEntry>
+    <CheatEntry>
+      <ID>300</ID>
+      <Description>"Facing"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>"MMU.exe"+002C55F0</Address>
+      <Offsets>
+        <Offset>68</Offset>
+        <Offset>C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>281</ID>
+      <Description>"process"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Array of byte</VariableType>
+      <ByteLength>4</ByteLength>
+      <Address>$process</Address>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols>
     <SymbolEntry>
