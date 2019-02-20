@@ -792,11 +792,11 @@ dealloc(newmem)
       <Description>"Enable Yoko Stage"</Description>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{ Game   : MMU.exe
-  Version: 
+  Version: 1.3.1
   Date   : 2019-02-20
-  Author : antum
+  Author : AntumDeluge
 
-  This script does blah blah blah
+  This script enables Yoku Man on the stage select screen.
 }
 
 [ENABLE]
@@ -827,34 +827,6 @@ aobEnableYokoStage:
 unregistersymbol(aobEnableYokoStage)
 dealloc(newmem)
 
-{
-// ORIGINAL CODE - INJECTION POINT: "MMU.exe"+FF4A8
-
-"MMU.exe"+FF483: D9 82 AC 0B 00 00     -  fld dword ptr [edx+00000BAC]
-"MMU.exe"+FF489: DC 1D E0 7C 69 00     -  fcomp qword ptr [MMU.exe+297CE0]
-"MMU.exe"+FF48F: DF E0                 -  fnstsw ax
-"MMU.exe"+FF491: F6 C4 41              -  test ah,41
-"MMU.exe"+FF494: 7A 6C                 -  jp MMU.exe+FF502
-"MMU.exe"+FF496: 6A 0F                 -  push 0F
-"MMU.exe"+FF498: 8B 0D A4 55 6C 00     -  mov ecx,[MMU.exe+2C55A4]
-"MMU.exe"+FF49E: E8 5D 56 F0 FF        -  call MMU.exe+4B00
-"MMU.exe"+FF4A3: 0F B6 C0              -  movzx eax,al
-"MMU.exe"+FF4A6: 85 C0                 -  test eax,eax
-// ---------- INJECTING HERE ----------
-"MMU.exe"+FF4A8: 74 58                 -  je MMU.exe+FF502
-"MMU.exe"+FF4AA: 8B 4D FC              -  mov ecx,[ebp-04]
-// ---------- DONE INJECTING  ----------
-"MMU.exe"+FF4AD: 0F B6 91 A8 0B 00 00  -  movzx edx,byte ptr [ecx+00000BA8]
-"MMU.exe"+FF4B4: 85 D2                 -  test edx,edx
-"MMU.exe"+FF4B6: 74 11                 -  je MMU.exe+FF4C9
-"MMU.exe"+FF4B8: 8B 45 FC              -  mov eax,[ebp-04]
-"MMU.exe"+FF4BB: D9 05 D0 89 69 00     -  fld dword ptr [MMU.exe+2989D0]
-"MMU.exe"+FF4C1: D9 98 AC 0B 00 00     -  fstp dword ptr [eax+00000BAC]
-"MMU.exe"+FF4C7: EB 1F                 -  jmp MMU.exe+FF4E8
-"MMU.exe"+FF4C9: 6A 00                 -  push 00
-"MMU.exe"+FF4CB: 6A 00                 -  push 00
-"MMU.exe"+FF4CD: 68 50 F9 65 00        -  push MMU.exe+25F950
-}
 </AssemblerScript>
     </CheatEntry>
   </CheatEntries>
