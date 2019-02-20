@@ -693,6 +693,17 @@ dealloc(newmem)
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
+      <ID>302</ID>
+      <Description>"Indestructable"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>"MMU.exe"+002C55F0</Address>
+      <Offsets>
+        <Offset>1A0</Offset>
+        <Offset>C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
       <ID>259</ID>
       <Description>"10+ Lives"</Description>
       <LastState/>
