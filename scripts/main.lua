@@ -149,6 +149,7 @@ tabs.Align = alBottom
 
 local pgMain = dofile('scripts/pages/pgmain.lua')
 local pgEnergy = dofile('scripts/pages/energy.lua')
+local pgTools = dofile('scripts/pages/tools.lua')
 
 -- make main window visible
 MainWindow.ShowInTaskBar = 'stAlways'
