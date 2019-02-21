@@ -24,6 +24,10 @@ local standalone = TrainerOrigin ~= nil
 MainWindow = createForm(false)
 MainWindow.BorderStyle = bsSizeable
 
+-- set minimum size
+MainWindow.Constraints.MinWidth = 320
+MainWindow.Constraints.MinHeight = 240
+
 -- icon displayed in the main interface
 local icon = createPicture()
 icon.loadFromFile('data/bitmap/icon.png')
