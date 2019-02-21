@@ -3,6 +3,19 @@
 MMU = {}
 MMU.name = 'MMU Trainer'
 
+--- Errors to be shown after window is visible.
+MMU.errors = {}
+MMU.addError = function(msg, label)
+	if label == nil then
+		label = 'ERROR'
+	end
+	msg = label .. ': ' .. msg
+	table.insert(MMU.errors, msg)
+end
+MMU.addWarning = function(msg)
+	MMU.addError(msg, 'WARNING')
+end
+
 -- trainer version
 ver = {}
 ver.maj = 0
@@ -141,3 +154,10 @@ local pgEnergy = dofile('scripts/pages/pgenergy.lua')
 MainWindow.ShowInTaskBar = 'stAlways'
 MainWindow.centerScreen()
 MainWindow.show()
+
+-- Show any errors/warnings from startup
+if #MMU.errors > 0 then
+	for idx, msg in pairs(MMU.errors) do
+		showMessage(msg)
+	end
+end
