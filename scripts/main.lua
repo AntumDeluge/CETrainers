@@ -141,11 +141,7 @@ end
 
 record = dofile('scripts/record.lua')
 
-tabs = createPageControl(MainWindow)
-tabs.anchorSideTop.control = MMU.processLabel
-tabs.anchorSideTop.side = asrBottom
---tabs.Left = 5
-tabs.Align = alBottom
+tabs = dofile('scripts/tabs.lua')
 
 local pgMain = dofile('scripts/pages/pgmain.lua')
 local pgEnergy = dofile('scripts/pages/energy.lua')
