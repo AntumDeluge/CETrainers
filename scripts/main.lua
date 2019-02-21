@@ -1,7 +1,7 @@
 
 -- main table
 MMU = {}
-MMU.name = "MMU Trainer"
+MMU.name = 'MMU Trainer'
 
 -- trainer version
 ver = {}
@@ -9,12 +9,12 @@ ver.maj = 0
 ver.min = 1
 ver.rel = 0
 ver.beta = 1
-ver.full = string.format("%i.%i.%i", ver.maj, ver.min, ver.rel)
+ver.full = string.format('%i.%i.%i', ver.maj, ver.min, ver.rel)
 if ver.beta > 0 then
-	ver.full = string.format("%s-beta%i", ver.full, ver.beta)
+	ver.full = string.format('%s-beta%i', ver.full, ver.beta)
 end
 
--- shows an unstable message instead of version info in about dialog if set to "true"
+-- shows an unstable message instead of version info in about dialog if set to 'true'
 UNSTABLE = false
 
 -- run as standalone executable
@@ -26,7 +26,7 @@ MainWindow.BorderStyle = bsSizeable
 
 -- icon displayed in the main interface
 local icon = createPicture()
-icon.loadFromFile("data/bitmap/icon.png")
+icon.loadFromFile('data/bitmap/icon.png')
 MainWindow.Icon = icon.getBitmap()
 
 
@@ -53,47 +53,47 @@ MainWindow.setCaption(MMU.name)
 local menuBar = createMainMenu(MainWindow)
 local menuBarItems = menuBar.getItems()
 
--- "File" main menu
+-- 'File' main menu
 local menuFile = createMenuItem(menuBar)
-menuFile.setCaption("File")
+menuFile.setCaption('File')
 
--- "Open" menu item
+-- 'Open' menu item
 local miOpen = createMenuItem(menuFile)
-miOpen.setCaption("Open Process")
+miOpen.setCaption('Open Process')
 miOpen.ShortCut = 16463
 miOpen.onClick = function()
-	local process = dofile("scripts/process.lua")
+	local process = dofile('scripts/process.lua')
 	local PID = process.attach()
 	if PID ~= nil then
-		MMU.processLabel.setCaption("Attached process: " .. tostring(PID))
+		MMU.processLabel.setCaption('Attached process: ' .. tostring(PID))
 	end
 end
 
 local bmpOpen = createPicture()
-bmpOpen.loadFromFile("data/bitmap/menu/process.png")
+bmpOpen.loadFromFile('data/bitmap/menu/process.png')
 miOpen.Bitmap = bmpOpen.getBitmap()
 
--- "Quit" menu item
+-- 'Quit' menu item
 local miQuit = createMenuItem(menuFile)
-miQuit.setCaption("Quit")
+miQuit.setCaption('Quit')
 miQuit.onClick = shutdown
 
 local bmpQuit = createPicture()
-bmpQuit.loadFromFile("data/bitmap/menu/quit.png")
+bmpQuit.loadFromFile('data/bitmap/menu/quit.png')
 miQuit.Bitmap = bmpQuit.getBitmap()
 
 menuFile.add(miOpen)
 menuFile.add(miQuit)
 
--- "Help" main menu
+-- 'Help' main menu
 local menuHelp = createMenuItem(menuBar)
-menuHelp.setCaption("Help")
+menuHelp.setCaption('Help')
 
--- "About" menu item
+-- 'About' menu item
 local miAbout = createMenuItem(menuHelp)
-miAbout.setCaption("About")
+miAbout.setCaption('About')
 miAbout.onClick = function()
-	local about = dofile("scripts/about.lua")
+	local about = dofile('scripts/about.lua')
 	about.showDialog()
 end
 
@@ -108,7 +108,7 @@ MainWindow.setMenu(menuBar)
 --- END: Menu Bar ---
 
 
--- action to take when "X-ed" out of
+-- action to take when 'X-ed' out of
 MainWindow.onClose = shutdown
 
 MMU.processLabel = createLabel(MainWindow)
@@ -117,63 +117,23 @@ MMU.processLabel.anchorSideLeft.side = asrCenter
 
 local loadedProcess = getOpenedProcessID()
 if loadedProcess > 0 then
-	MMU.processLabel.setCaption("Attached process: " .. tostring(loadedProcess))
+	MMU.processLabel.setCaption('Attached process: ' .. tostring(loadedProcess))
 else
-	MMU.processLabel.setCaption("Attached process:")
+	MMU.processLabel.setCaption('Attached process:')
 end
 
-local record = dofile("scripts/record.lua")
+record = dofile('scripts/record.lua')
 
-local tabs = createPageControl(MainWindow)
+tabs = createPageControl(MainWindow)
 tabs.anchorSideTop.control = MMU.processLabel
 tabs.anchorSideTop.side = asrBottom
 --tabs.Left = 5
 tabs.Align = alBottom
 
-local tabMain = tabs.addTab()
-tabMain.setCaption("Main")
-
-local tabExt = tabs.addTab()
-tabExt.setCaption("Extended")
-
-local chkPanel = createPanel(tabMain)
-chkPanel.AutoSize = true
-chkPanel.Left = 5
-chkPanel.anchorSideTop.control = MMU.processLabel
-chkPanel.anchorSideTop.side = asrBottom
-
-local checkBoxes = {
-	"Instant Death",
-	"Infinite Lives",
-	"Infinite Weapon Energy",
-	"Invincibility",
-	"10+ Lives",
-	"Auto End Stage",
-}
-
-local idx = 0
-for _, c in pairs(checkBoxes) do
-	local chk = createCheckBox(chkPanel)
-	chk.setCaption(c)
-	if record.get(c).Active then
-		chk.Checked = true
-	end
-	chk.OnChange = function()
-		local enabled = chk.Checked
-		local ret = record.setEnabled(c, enabled)
-		
-		-- update check box in case of failure
-		if ret ~= enabled then
-			showMessage("WARNING: Could not change record \"" .. c .. "\". Is a process loaded?")
-			chk.Checked = ret
-		end
-	end
-	chk.setPosition(10, idx * 20)
-	idx = idx + 1
-end
-idx = nil
+local pgMain = dofile('scripts/pages/pgmain.lua')
+local pgEnergy = dofile('scripts/pages/pgenergy.lua')
 
 -- make main window visible
-MainWindow.ShowInTaskBar = "stAlways"
+MainWindow.ShowInTaskBar = 'stAlways'
 MainWindow.centerScreen()
 MainWindow.show()
