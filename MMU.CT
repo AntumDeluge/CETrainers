@@ -777,7 +777,7 @@ dealloc(newmem)
       <Address>MMU.exe+2C559A</Address>
     </CheatEntry>
     <CheatEntry>
-      <ID>247</ID>
+      <ID>325</ID>
       <Description>"YOKU Letters"</Description>
       <ShowAsHex>1</ShowAsHex>
       <VariableType>Byte</VariableType>
