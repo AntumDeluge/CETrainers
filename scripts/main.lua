@@ -148,7 +148,7 @@ tabs.anchorSideTop.side = asrBottom
 tabs.Align = alBottom
 
 local pgMain = dofile('scripts/pages/pgmain.lua')
-local pgEnergy = dofile('scripts/pages/pgenergy.lua')
+local pgEnergy = dofile('scripts/pages/energy.lua')
 
 -- make main window visible
 MainWindow.ShowInTaskBar = 'stAlways'
