@@ -39,7 +39,7 @@ MainWindow.BorderStyle = bsSizeable
 
 -- set minimum size
 MainWindow.Constraints.MinWidth = 320
-MainWindow.Constraints.MinHeight = 240
+MainWindow.Constraints.MinHeight = 350
 
 -- icon displayed in the main interface
 local icon = createPicture()
