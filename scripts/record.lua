@@ -3,12 +3,16 @@ local record = {}
 
 local addressList = getAddressList()
 
-record.get = function(r)
+record.get = function(r, byid)
 	local recType = type(r)
 	if recType == "string" then
 		r = addressList.getMemoryRecordByDescription(r)
 	else
-		r = addressList.getMemoryRecord(r)
+		if byid then
+			r = addressList.getMemoryRecordByID(r)
+		else
+			r = addressList.getMemoryRecord(r)
+		end
 	end
 
 	return r
