@@ -13,6 +13,11 @@ for idx, rec in ipairs(recTools.Child) do
 	local chk = createCheckBox(tools)
 	chk.setCaption(rec.Description)
 
+	-- set active state
+	if rec.IsReadable then
+		chk.Checked = rec.Value == '1'
+	end
+
 	if prevChk ~= nil then
 		chk.anchorSideTop.control = prevChk
 		chk.anchorSideTop.side = asrBottom
