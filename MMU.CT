@@ -848,6 +848,16 @@ dealloc(newmem)
       <ByteLength>4</ByteLength>
       <Address>$process</Address>
     </CheatEntry>
+    <CheatEntry>
+      <ID>323</ID>
+      <Description>"Fired Shots"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"MMU.exe"+002C55F0</Address>
+      <Offsets>
+        <Offset>260</Offset>
+        <Offset>C</Offset>
+      </Offsets>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols>
     <SymbolEntry>
