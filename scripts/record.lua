@@ -4,6 +4,7 @@ local record = {}
 local addressList = getAddressList()
 
 record.get = function(r, byid)
+	local recInput = r
 	local recType = type(r)
 	if recType == "string" then
 		r = addressList.getMemoryRecordByDescription(r)
@@ -13,6 +14,10 @@ record.get = function(r, byid)
 		else
 			r = addressList.getMemoryRecord(r)
 		end
+	end
+
+	if r == nil then
+		MMU.addWarning('Record not found: ' .. tostring(recInput))
 	end
 
 	return r
