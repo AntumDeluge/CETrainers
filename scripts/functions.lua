@@ -1,4 +1,18 @@
 
+--- Function to add startup error/warning message.
+mmu.addError = function(msg, label)
+	if label == nil then
+		label = 'ERROR'
+	end
+	msg = label .. ': ' .. msg
+	table.insert(mmu.errors, msg)
+end
+
+--- Alias for mmu.addError(msg, 'WARNING')
+mmu.addWarning = function(msg)
+	mmu.addError(msg, 'WARNING')
+end
+
 -- usable control types
 local control_types = {
 	-- a 'check' simply enables/disables a memory record

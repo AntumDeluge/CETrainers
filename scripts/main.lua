@@ -11,16 +11,6 @@ local standalone = TrainerOrigin ~= nil
 
 --- Errors to be shown after window is visible.
 mmu.errors = {}
-mmu.addError = function(msg, label)
-	if label == nil then
-		label = 'ERROR'
-	end
-	msg = label .. ': ' .. msg
-	table.insert(mmu.errors, msg)
-end
-mmu.addWarning = function(msg)
-	mmu.addError(msg, 'WARNING')
-end
 
 -- create main window but do not show it yet
 MainWindow = createForm(false)
