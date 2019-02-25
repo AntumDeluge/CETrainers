@@ -1,5 +1,5 @@
 local pgMain = tabs.addTab()
-pgMain.setCaption('Main')
+pgMain.setCaption('General')
 
 local chkPanel = createPanel(pgMain)
 chkPanel.AutoSize = true
@@ -26,7 +26,7 @@ for _, c in pairs(checkBoxes) do
 	chk.OnChange = function()
 		local enabled = chk.Checked
 		local ret = record.setEnabled(c, enabled)
-		
+
 		-- update check box in case of failure
 		if ret ~= enabled then
 			showMessage('WARNING: Could not change record \'' .. c .. '\'. Is a process loaded?')

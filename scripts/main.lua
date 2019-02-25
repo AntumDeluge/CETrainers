@@ -143,7 +143,7 @@ record = dofile('scripts/record.lua')
 
 tabs = dofile('scripts/tabs.lua')
 
-local pgMain = dofile('scripts/pages/pgmain.lua')
+local pgGeneral = dofile('scripts/pages/general.lua')
 local pgEnergy = dofile('scripts/pages/energy.lua')
 local pgTools = dofile('scripts/pages/tools.lua')
 
