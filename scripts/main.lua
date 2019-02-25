@@ -1,6 +1,6 @@
 
 -- main table
-MMU = {}
+mmu = {}
 mmu.name = 'MMU Trainer'
 
 --- Errors to be shown after window is visible.
