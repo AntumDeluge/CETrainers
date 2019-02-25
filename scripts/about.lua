@@ -1,5 +1,6 @@
 
 local about = {}
+local ver = dofile('scripts/version.lua')
 
 -- displays an about dialog
 about.showDialog = function()
@@ -47,7 +48,7 @@ about.showDialog = function()
 	author.BorderSpacing.top = 20
 
 	local version = createLabel(panel)
-	if UNSTABLE then
+	if ver.UNSTABLE then
 		version.setCaption("This software is unstable and likely will not work correctly")
 	else
 		version.setCaption("Version: " .. ver.full)
