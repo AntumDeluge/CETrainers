@@ -2,6 +2,9 @@
 -- main table
 mmu = {}
 mmu.name = 'MMU Trainer'
+if mmu.small then
+	mmu.name = 'Minimalist ' .. mmu.name
+end
 
 -- run as standalone executable
 local standalone = TrainerOrigin ~= nil

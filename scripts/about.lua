@@ -20,7 +20,11 @@ about.showDialog = function()
 
 	-- description text
 	local descr1 = createLabel(panel)
-	descr1.setCaption("Trainer for")
+	if mmu.small then
+		descr1.setCaption("Minimalist Trainer for")
+	else
+		descr1.setCaption("Trainer for")
+	end
 	descr1.Top = H / 4
 	local descr2 = createLabel(panel)
 	descr2.setCaption("Mega Man Unlimited")
