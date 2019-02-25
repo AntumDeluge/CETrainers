@@ -1,5 +1,10 @@
 
-local tabs = createPageControl(MainWindow)
+local tabs = nil
+if mmu.small then
+	tabs = createPanel(MainWindow)
+else
+	tabs = createPageControl(MainWindow)
+end
 
 tabs.AnchorSideTop.Control = mmu.processLabel
 tabs.AnchorSideTop.Side = asrBottom
