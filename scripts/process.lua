@@ -43,7 +43,7 @@ end
 process.attach = function()
 	local pName = "MMU.exe"
 	local wList = getWindowList()
-	
+
 	local process = nil
 
 	for _, w in pairs(wList) do
