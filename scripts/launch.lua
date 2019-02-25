@@ -1,9 +1,7 @@
 
--- main window construction
 dofile('scripts/main.lua')
-
--- tabbed interface
-tabs = dofile('scripts/tabs.lua')
+-- main window construction
+dofile('scripts/window.lua')
 
 local pgGeneral = dofile('scripts/pages/general.lua')
 local pgEnergy = dofile('scripts/pages/energy.lua')
