@@ -17,7 +17,7 @@ record.get = function(r, byid)
 	end
 
 	if r == nil then
-		MMU.addWarning('Record not found: ' .. tostring(recInput))
+		mmu.addWarning('Record not found: ' .. tostring(recInput))
 	end
 
 	return r

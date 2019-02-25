@@ -4,7 +4,7 @@ pgMain.setCaption('General')
 local chkPanel = createPanel(pgMain)
 chkPanel.AutoSize = true
 chkPanel.Left = 5
-chkPanel.anchorSideTop.control = MMU.processLabel
+chkPanel.anchorSideTop.control = mmu.processLabel
 chkPanel.anchorSideTop.side = asrBottom
 
 local checkBoxes = {

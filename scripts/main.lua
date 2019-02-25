@@ -1,19 +1,19 @@
 
 -- main table
 MMU = {}
-MMU.name = 'MMU Trainer'
+mmu.name = 'MMU Trainer'
 
 --- Errors to be shown after window is visible.
-MMU.errors = {}
-MMU.addError = function(msg, label)
+mmu.errors = {}
+mmu.addError = function(msg, label)
 	if label == nil then
 		label = 'ERROR'
 	end
 	msg = label .. ': ' .. msg
-	table.insert(MMU.errors, msg)
+	table.insert(mmu.errors, msg)
 end
-MMU.addWarning = function(msg)
-	MMU.addError(msg, 'WARNING')
+mmu.addWarning = function(msg)
+	mmu.addError(msg, 'WARNING')
 end
 
 -- trainer version
@@ -61,7 +61,7 @@ local function shutdown()
 end
 
 -- text displayed in title bar
-MainWindow.setCaption(MMU.name)
+MainWindow.setCaption(mmu.name)
 
 
 --- START: Menu Bar ---
@@ -82,7 +82,7 @@ miOpen.onClick = function()
 	local process = dofile('scripts/process.lua')
 	local PID = process.attach()
 	if PID ~= nil then
-		MMU.processLabel.setCaption('Attached process: ' .. tostring(PID))
+		mmu.processLabel.setCaption('Attached process: ' .. tostring(PID))
 	end
 end
 
@@ -128,15 +128,15 @@ MainWindow.setMenu(menuBar)
 -- action to take when 'X-ed' out of
 MainWindow.onClose = shutdown
 
-MMU.processLabel = createLabel(MainWindow)
-MMU.processLabel.anchorSideLeft.control = MainWindow
-MMU.processLabel.anchorSideLeft.side = asrCenter
+mmu.processLabel = createLabel(MainWindow)
+mmu.processLabel.anchorSideLeft.control = MainWindow
+mmu.processLabel.anchorSideLeft.side = asrCenter
 
 local loadedProcess = getOpenedProcessID()
 if loadedProcess > 0 then
-	MMU.processLabel.setCaption('Attached process: ' .. tostring(loadedProcess))
+	mmu.processLabel.setCaption('Attached process: ' .. tostring(loadedProcess))
 else
-	MMU.processLabel.setCaption('Attached process:')
+	mmu.processLabel.setCaption('Attached process:')
 end
 
 record = dofile('scripts/record.lua')
@@ -153,8 +153,8 @@ MainWindow.centerScreen()
 MainWindow.show()
 
 -- Show any errors/warnings from startup
-if #MMU.errors > 0 then
-	for idx, msg in pairs(MMU.errors) do
+if #mmu.errors > 0 then
+	for idx, msg in pairs(mmu.errors) do
 		showMessage(msg)
 	end
 end

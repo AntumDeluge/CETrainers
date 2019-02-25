@@ -1,7 +1,7 @@
 
 local tabs = createPageControl(MainWindow)
 
-tabs.AnchorSideTop.Control = MMU.processLabel
+tabs.AnchorSideTop.Control = mmu.processLabel
 tabs.AnchorSideTop.Side = asrBottom
 tabs.AnchorSideBottom.Control = MainWindow
 tabs.AnchorSideBottom.Side = asrBottom
