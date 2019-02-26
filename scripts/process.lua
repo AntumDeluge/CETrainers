@@ -47,16 +47,18 @@ end
 process.setName = function(pName)
 	pName = pName or pNameDefault
 
-	-- TODO: Center on main window
 	local dialog = createForm(false)
 	dialog.BorderStyle = bsDialog
 	dialog.setCaption('Open a process...')
+	dialog.Width = 200
+	dialog.Height = 100
 
 	local label = createLabel(dialog)
 	label.setCaption('Process name (default=' .. pNameDefault .. '):')
 	label.AnchorSideLeft.Control = dialog
 	label.AnchorSideLeft.Side = asrCenter
 	local input = createEdit(dialog)
+	-- TODO: add some padding to left & right of input
 	input.Text = pName
 	input.Anchors = '[akTop,akLeft,akRight]'
 	input.AnchorSideTop.Control = label
@@ -105,6 +107,7 @@ process.setName = function(pName)
 		dialog.close()
 	end
 
+	centerOnMainWindow(dialog)
 	dialog.showModal()
 	dialog.destroy()
 
@@ -115,21 +118,20 @@ end
 process.attach = function(pName)
 	local wList = getWindowList()
 
-	local process = nil
+	local proc = nil
 
 	for _, w in pairs(wList) do
 		if w.Name == pName then
-			process = w
+			proc = w
 			break
 		end
 	end
 
-	if process ~= nil then
-		openProcess(process.PID)
-		return process.PID
+	if proc ~= nil then
+		openProcess(proc.PID)
+		return proc.PID
 	else
-		-- TODO: allow process to be attached manually
-		showMessage("Process not found: " .. pName)
+		showMessage('Process not found: ' .. pName)
 	end
 end
 

@@ -85,3 +85,15 @@ function createControl(ctrltype, rec, parent)
 
 	return control
 end
+
+--- Function to center a sub-window on the main Form
+--
+-- @function centerOnMainWindow
+-- @tparam Form form
+function centerOnMainWindow(form)
+	--local mw = getMainForm()
+	local x = MainWindow.Left + (MainWindow.Width - form.Width) / 2
+	local y = MainWindow.Top + (MainWindow.Height - form.Height) / 2
+
+	form.setPosition(x, y)
+end
