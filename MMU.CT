@@ -1067,30 +1067,6 @@ dealloc(newmem)
         <Offset>C</Offset>
       </Offsets>
     </CheatEntry>
-    <CheatEntry>
-      <ID>332</ID>
-      <Description>"Bubbles"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>005AA617</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>333</ID>
-      <Description>"Underwater?"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>005AA5E8</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>338</ID>
-      <Description>"Bubbles"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>0019FB68</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>339</ID>
-      <Description>"Underwater?"</Description>
-      <VariableType>Byte</VariableType>
-      <Address>2376EC6B</Address>
-    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols>
     <SymbolEntry>
