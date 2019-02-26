@@ -9,13 +9,17 @@ menuFile.setCaption('File')
 
 -- 'Open' menu item
 local miOpen = createMenuItem(menuFile)
+local pName = nil
 miOpen.setCaption('Open Process')
 miOpen.ShortCut = 16463
 miOpen.onClick = function()
 	local process = dofile('scripts/process.lua')
-	local PID = process.attach()
-	if PID ~= nil then
-		mmu.processLabel.setCaption('Attached process: ' .. tostring(PID))
+	pName = process.setName(pName)
+	if pName ~= nil then
+		local PID = process.attach(pName)
+		if PID ~= nil then
+			mmu.processLabel.setCaption('Attached process: ' .. tostring(PID))
+		end
 	end
 end
 

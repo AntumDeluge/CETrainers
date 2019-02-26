@@ -1,5 +1,6 @@
 
 local process = {}
+local pNameDefault = 'MMU.exe'
 
 -- retrieves a list of running processes
 local getWindowList = function()
@@ -39,9 +40,79 @@ local getWindowList = function()
 	return wList
 end
 
+--- Checks if process is running.
+--
+-- @function process.find
+-- @tparam WinControl parent The parent window for the dialog
+process.setName = function(pName)
+	pName = pName or pNameDefault
+
+	-- TODO: Center on main window
+	local dialog = createForm(false)
+	dialog.BorderStyle = bsDialog
+	dialog.setCaption('Open a process...')
+
+	local label = createLabel(dialog)
+	label.setCaption('Process name (default=' .. pNameDefault .. '):')
+	label.AnchorSideLeft.Control = dialog
+	label.AnchorSideLeft.Side = asrCenter
+	local input = createEdit(dialog)
+	input.Text = pName
+	input.Anchors = '[akTop,akLeft,akRight]'
+	input.AnchorSideTop.Control = label
+	input.AnchorSideTop.Side = asrBottom
+	input.AnchorSideRight.Control = dialog
+	input.AnchorSideRight.side = asrRight
+
+	-- OK/cancel buttons
+	local btnAccept = createButton(dialog)
+	btnAccept.setCaption('OK')
+	local btnCancel = createButton(dialog)
+	btnCancel.setCaption('Cancel')
+	for _, btn in pairs({btnAccept, btnCancel,}) do
+		btn.Anchors = '[akRight,akBottom]'
+		btn.AnchorSideBottom.Control = dialog
+		btn.AnchorSideBottom.Side = asrBottom
+	end
+	btnAccept.AnchorSideRight.Control = dialog
+	btnAccept.AnchorSideRight.Side = asrRight
+	btnCancel.AnchorSideRight.Control = btnAccept
+	btnCancel.AnchorSideRight.Side = asrLeft
+
+	local getValue = function()
+		-- remove leading & trailing whitespace
+		return input.Text:gsub("^%s*(.-)%s*$", "%1")
+	end
+
+	local isEmpty = function()
+		return getValue() == ''
+	end
+
+	btnAccept.OnClick = function()
+		if isEmpty() then
+			showMessage('Process name cannot be empty')
+			-- reset input text in case of whitespace
+			input.Text = ''
+			return
+		end
+
+		pName = getValue()
+		dialog.close()
+	end
+
+	btnCancel.OnClick = function()
+		pName = nil
+		dialog.close()
+	end
+
+	dialog.showModal()
+	dialog.destroy()
+
+	return pName
+end
+
 -- attaches process
-process.attach = function()
-	local pName = "MMU.exe"
+process.attach = function(pName)
 	local wList = getWindowList()
 
 	local process = nil
