@@ -14,8 +14,8 @@ miOpen.setCaption('Open Process')
 miOpen.ShortCut = 16463
 miOpen.onClick = function()
 	local process = dofile('scripts/process.lua')
-	pName = process.setName(pName)
-	if pName ~= nil then
+	pName, modalResult = process.setName(pName)
+	if modalResult == 1 and pName ~= nil then
 		local PID = process.attach(pName)
 		if PID ~= nil then
 			mmu.processLabel.setCaption('Attached process: ' .. tostring(PID))

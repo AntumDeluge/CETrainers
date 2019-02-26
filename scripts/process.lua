@@ -99,7 +99,7 @@ process.setName = function(pName)
 		end
 
 		pName = getValue()
-		dialog.close()
+		dialog.ModalResult = 1
 	end
 
 	btnCancel.OnClick = function()
@@ -109,9 +109,12 @@ process.setName = function(pName)
 
 	centerOnMainWindow(dialog)
 	dialog.showModal()
+
+	local modalResult = dialog.ModalResult
+
 	dialog.destroy()
 
-	return pName
+	return pName, modalResult
 end
 
 -- attaches process
