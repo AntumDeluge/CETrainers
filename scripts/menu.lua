@@ -27,6 +27,17 @@ local bmpOpen = createPicture()
 bmpOpen.loadFromFile('data/bitmap/menu/process.png')
 miOpen.Bitmap = bmpOpen.getBitmap()
 
+--- 'Refresh' menu item.
+--
+-- Used to update controls in case of being disabled.
+local miRefresh = createMenuItem(menuFile)
+miRefresh.setCaption('Refresh')
+miRefresh.onClick = refreshControls
+
+local bmpRefresh = createPicture()
+bmpRefresh.loadFromFile('data/bitmap/menu/refresh.png')
+miRefresh.Bitmap = bmpRefresh.getBitmap()
+
 -- 'Quit' menu item
 local miQuit = createMenuItem(menuFile)
 miQuit.setCaption('Quit')
@@ -37,6 +48,7 @@ bmpQuit.loadFromFile('data/bitmap/menu/quit.png')
 miQuit.Bitmap = bmpQuit.getBitmap()
 
 menuFile.add(miOpen)
+menuFile.add(miRefresh)
 menuFile.add(miQuit)
 
 -- 'Help' main menu
