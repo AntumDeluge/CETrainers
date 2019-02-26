@@ -4,7 +4,7 @@ local ver = {}
 ver.maj = 0
 ver.min = 1
 ver.rel = 0
-ver.beta = 1
+ver.beta = 2
 ver.full = string.format("%i.%i.%i", ver.maj, ver.min, ver.rel)
 if ver.beta > 0 then
 	ver.full = string.format("%s-beta%i", ver.full, ver.beta)
