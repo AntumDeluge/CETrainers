@@ -61,6 +61,44 @@ local function createCheckControl(ctrl, parent)
 	-- TODO: listen for changes from main Cheat Engine process
 end
 
+local function createCheckValueControl(ctrl, parent)
+	ctrl.Control = createCheckBox(parent)
+
+	-- function to check if check box & record value in sync
+	ctrl.synchronized = function()
+		return (not ctrl.Control.Checked and ctrl.Record.Value == '0') or (ctrl.Control.Checked and ctrl.Record.Value ~= '0')
+	end
+
+	ctrl.Control.OnChange = function(sender)
+		print('Record: ' .. ctrl.Record.Description)
+		if not ctrl.synchronized() then
+			print('Changing ...')
+			if sender == ctrl.Control then
+				if ctrl.Control.Checked then
+					ctrl.Record.Value = '1'
+				else
+					ctrl.Record.Value = '0'
+				end
+			elseif sender == ctrl.Record then
+				ctrl.Control.Checked = ctrl.Record.Value ~= '0'
+			end
+		end
+	end
+
+	-- polls record value to catch changes
+	local prevValue = ctrl.Record.Value
+	ctrl.Record.OnGetDisplayValue = function(sender, curValue)
+		local changed = prevValue and (prevValue ~= curValue)
+		prevValue = curValue
+
+		if changed then
+			ctrl.Control.OnChange(rec)
+		end
+
+		return false, curValue
+	end
+end
+
 --- Function to create a control based on control types.
 --
 -- @function createControl
@@ -103,6 +141,8 @@ function createControl(ctrltype, rec, parent)
 		-- control creation
 		if ctrltype == 'check' then
 			createCheckControl(ctrl, parent)
+		elseif ctrltype == 'checkvalue' then
+			createCheckValueControl(ctrl, parent)
 		end
 
 		if ctrl.Control ~= nil then
