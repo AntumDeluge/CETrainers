@@ -30,6 +30,7 @@ function refreshControls()
 			ctrl.Control.setEnabled(ctrl.Record.IsReadable)
 		else
 			ctrl.Control.setEnabled(true)
+			ctrl.Control.Checked = ctrl.Record.Active
 		end
 	end
 end
