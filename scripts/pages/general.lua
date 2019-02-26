@@ -18,23 +18,7 @@ local checkBoxes = {
 
 local idx = 0
 for _, c in pairs(checkBoxes) do
-	local chk = createCheckBox(chkPanel)
-	chk.setCaption(c)
-	if record.get(c).Active then
-		chk.Checked = true
-	end
-	chk.OnChange = function()
-		local enabled = chk.Checked
-		local ret = record.setEnabled(c, enabled)
-
-		-- update check box in case of failure
-		if ret ~= enabled then
-			showMessage('WARNING: Could not change record \'' .. c .. '\'. Is a process loaded?')
-			chk.Checked = ret
-		end
-	end
-	chk.setPosition(10, idx * 20)
-	idx = idx + 1
+	createControl('check', c, chkPanel)
 end
 idx = nil
 
