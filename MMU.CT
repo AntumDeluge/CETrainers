@@ -106,7 +106,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>80</ID>
-      <Description>"Weapons/Tools"</Description>
+      <Description>"Weapon / Tool Energy"</Description>
       <Options moRecursiveSetValue="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
