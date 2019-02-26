@@ -349,7 +349,7 @@ dealloc(newmem)
         </CheatEntry>
         <CheatEntry>
           <ID>214</ID>
-          <Description>"Comet Woman"</Description>
+          <Description>"Comet Dash"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -358,7 +358,7 @@ dealloc(newmem)
         </CheatEntry>
         <CheatEntry>
           <ID>237</ID>
-          <Description>"Glue Man"</Description>
+          <Description>"Glue Shot"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -367,7 +367,7 @@ dealloc(newmem)
         </CheatEntry>
         <CheatEntry>
           <ID>233</ID>
-          <Description>"Jet Man"</Description>
+          <Description>"Jet Missile"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -376,7 +376,7 @@ dealloc(newmem)
         </CheatEntry>
         <CheatEntry>
           <ID>235</ID>
-          <Description>"Nail Man"</Description>
+          <Description>"Nail Shield"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -384,8 +384,17 @@ dealloc(newmem)
           </Offsets>
         </CheatEntry>
         <CheatEntry>
+          <ID>218</ID>
+          <Description>"Nitro Blast"</Description>
+          <VariableType>Byte</VariableType>
+          <Address>"THREADSTACK0"-000002F8</Address>
+          <Offsets>
+            <Offset>4</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
           <ID>238</ID>
-          <Description>"Rainbow Man"</Description>
+          <Description>"Rainbow Beam"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -394,7 +403,7 @@ dealloc(newmem)
         </CheatEntry>
         <CheatEntry>
           <ID>234</ID>
-          <Description>"Tank Man"</Description>
+          <Description>"Tank Arsenal"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -402,17 +411,17 @@ dealloc(newmem)
           </Offsets>
         </CheatEntry>
         <CheatEntry>
-          <ID>218</ID>
-          <Description>"Trinitro Man"</Description>
+          <ID>232</ID>
+          <Description>"Water Cannon"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
-            <Offset>4</Offset>
+            <Offset>C</Offset>
           </Offsets>
         </CheatEntry>
         <CheatEntry>
           <ID>239</ID>
-          <Description>"Yo-Yo man"</Description>
+          <Description>"Yo-Yo Cutter"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
@@ -421,20 +430,11 @@ dealloc(newmem)
         </CheatEntry>
         <CheatEntry>
           <ID>236</ID>
-          <Description>"Yoku Man"</Description>
+          <Description>"Yoku Attack"</Description>
           <VariableType>Byte</VariableType>
           <Address>"THREADSTACK0"-000002F8</Address>
           <Offsets>
             <Offset>5</Offset>
-          </Offsets>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>232</ID>
-          <Description>"Whirlpool Man"</Description>
-          <VariableType>Byte</VariableType>
-          <Address>"THREADSTACK0"-000002F8</Address>
-          <Offsets>
-            <Offset>C</Offset>
           </Offsets>
         </CheatEntry>
       </CheatEntries>
