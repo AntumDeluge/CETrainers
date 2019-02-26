@@ -920,6 +920,54 @@ dealloc(newmem)
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
+      <ID>313</ID>
+      <Description>"W-Tank Shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F43C3+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>314</ID>
+      <Description>"SE-Tank Shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F440D+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>315</ID>
+      <Description>"Eddie Shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F4457+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>316</ID>
+      <Description>"Beat Shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F44A1+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>317</ID>
+      <Description>"Shock Guard Shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F44EB+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>318</ID>
+      <Description>"Energy Balancer shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F4535+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>319</ID>
+      <Description>"Lives shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F432F+3</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>320</ID>
+      <Description>"E-Tank shade (shop)"</Description>
+      <VariableType>Byte</VariableType>
+      <Address>MMU.exe+F4379+3</Address>
+    </CheatEntry>
+    <CheatEntry>
       <ID>323</ID>
       <Description>"Fired Shots"</Description>
       <VariableType>4 Bytes</VariableType>
