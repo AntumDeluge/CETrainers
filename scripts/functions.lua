@@ -28,6 +28,9 @@ function refreshControls()
 			ctrl.Control.setEnabled(false)
 		elseif ctrl.Record.Type ~= 11 then -- 11 = script?
 			ctrl.Control.setEnabled(ctrl.Record.IsReadable)
+			if ctrl.Type == 'checkvalue' then
+				ctrl.Control.Checked = ctrl.Record.Value ~= '0'
+			end
 		else
 			ctrl.Control.setEnabled(true)
 			ctrl.Control.Checked = ctrl.Record.Active
@@ -36,6 +39,7 @@ function refreshControls()
 end
 
 local function createCheckControl(ctrl, parent)
+	ctrl.Type = 'check'
 	ctrl.Control = createCheckBox(parent)
 
 	-- function to check if check box & record states are the same
@@ -62,6 +66,7 @@ local function createCheckControl(ctrl, parent)
 end
 
 local function createCheckValueControl(ctrl, parent)
+	ctrl.Type = 'checkvalue'
 	ctrl.Control = createCheckBox(parent)
 
 	-- function to check if check box & record value in sync
