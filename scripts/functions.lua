@@ -35,6 +35,32 @@ function refreshControls()
 	end
 end
 
+local function createCheckControl(ctrl, parent)
+	ctrl.Control = createCheckBox(parent)
+
+	-- function to check if check box & record states are the same
+	ctrl.synchronized = function()
+		return ctrl.Control.Checked == ctrl.Record.Active
+	end
+
+	ctrl.Control.OnChange = function(sender)
+		if not ctrl.synchronized() then
+			if sender == ctrl.Control then
+				ctrl.Record.Active = ctrl.Control.Checked
+			elseif sender == ctrl.Record then
+				ctrl.Control.Checked = ctrl.Record.Active
+			end
+		end
+
+		if not ctrl.synchronized() then
+			showMessage('An error occurred trying to set state of "' .. ctrl.Record.Description .. '"')
+			-- reset state
+			ctrl.Control.Checked = not ctrl.Control.Checked
+		end
+	end
+	-- TODO: listen for changes from main Cheat Engine process
+end
+
 --- Function to create a control based on control types.
 --
 -- @function createControl
@@ -76,29 +102,7 @@ function createControl(ctrltype, rec, parent)
 	else
 		-- control creation
 		if ctrltype == 'check' then
-			ctrl.Control = createCheckBox(parent)
-
-			-- function to check if check box & record states are the same
-			ctrl.synchronized = function()
-				return ctrl.Control.Checked == ctrl.Record.Active
-			end
-
-			ctrl.Control.OnChange = function(sender)
-				if not ctrl.synchronized() then
-					if sender == ctrl.Control then
-						ctrl.Record.Active = ctrl.Control.Checked
-					elseif sender == ctrl.Record then
-						ctrl.Control.Checked = ctrl.Record.Active
-					end
-				end
-
-				if not ctrl.synchronized() then
-					showMessage('An error occurred trying to set state of "' .. ctrl.Record.Description .. '"')
-					-- reset state
-					ctrl.Control.Checked = not ctrl.Control.Checked
-				end
-			end
-			-- TODO: listen for changes from main Cheat Engine process
+			createCheckControl(ctrl, parent)
 		end
 
 		if ctrl.Control ~= nil then
