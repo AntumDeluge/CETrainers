@@ -31,7 +31,7 @@ miOpen.Bitmap = bmpOpen.getBitmap()
 --
 -- Used to update controls in case of being disabled.
 local miRefresh = createMenuItem(menuFile)
-miRefresh.setCaption('Refresh')
+miRefresh.setCaption('Refresh Controls')
 miRefresh.onClick = refreshControls
 
 local bmpRefresh = createPicture()
