@@ -316,7 +316,7 @@ dealloc(newmem)
     </CheatEntry>
     <CheatEntry>
       <ID>215</ID>
-      <Description>"Defeated Bosses / Tools"</Description>
+      <Description>"Weapons / Tools"</Description>
       <Options moRecursiveSetValue="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
