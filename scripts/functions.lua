@@ -21,6 +21,19 @@ local control_types = {
 	'checkvalue',
 }
 
+function refreshControls()
+	local pAttached = getOpenedProcessID() ~= 0
+	for _, ctrl in pairs(mmu.controls) do
+		if not pAttached then
+			ctrl.Control.setEnabled(false)
+		elseif ctrl.Record.Type ~= 11 then -- 11 = script?
+			ctrl.Control.setEnabled(ctrl.Record.IsReadable)
+		else
+			ctrl.Control.setEnabled(true)
+		end
+	end
+end
+
 --- Function to create a control based on control types.
 --
 -- @function createControl

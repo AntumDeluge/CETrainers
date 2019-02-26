@@ -11,4 +11,6 @@ dofile('scripts/window.lua')
 local instantDeath = createControl('check', 'Instant Death', tabs)
 local autoEndStage = createControl('check', 'Auto End Stage', tabs)
 
+refreshControls()
+
 MainWindow.show()

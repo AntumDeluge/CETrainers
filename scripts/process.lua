@@ -260,6 +260,11 @@ process.attach = function(pName)
 	progress.start()
 	progress.destroy()
 
+	-- refresh accessible controls
+	if PID ~= nil then
+		refreshControls()
+	end
+
 	return PID
 end
 
