@@ -29,7 +29,9 @@ record.setEnabled = function(r, enabled)
 		enabled = true
 	end
 
-	r = record.get(r)
+	if type(r) ~= 'userdata' then
+		r = record.get(r)
+	end
 	r.Active = enabled
 
 	return r.Active
