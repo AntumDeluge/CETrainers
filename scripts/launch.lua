@@ -4,7 +4,6 @@ dofile('scripts/main.lua')
 dofile('scripts/window.lua')
 
 local pgGeneral = dofile('scripts/pages/general.lua')
-local pgEnergy = dofile('scripts/pages/energy.lua')
 local pgTools = dofile('scripts/pages/tools.lua')
 
 refreshControls()
