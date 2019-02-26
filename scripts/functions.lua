@@ -28,19 +28,14 @@ local control_types = {
 -- @param rec
 -- @tparam WinControl parent
 function createControl(ctrltype, rec, parent)
-	-- create a table for keeping track of child objects
-	if parent.Children == nil then
-		parent.Children = {}
-	end
+	local sibling_count = parent.ControlCount
 
-	local sibling_count = #parent.Children
+	local ctrl = {}
 
-	local control = {}
-
-	if rec ~=nil and type(rec) ~= 'userdata' then
-		control.Record = record.get(rec)
+	if rec ~= nil and type(rec) ~= 'userdata' then
+		ctrl.Record = record.get(rec)
 	else
-		control.Record = rec
+		ctrl.Record = rec
 	end
 
 	-- check for valid control type
@@ -65,25 +60,31 @@ function createControl(ctrltype, rec, parent)
 	if not validControl then
 		mmu.addWarning('Cannot create control type: ' .. ctrltype)
 	else
+		-- control creation
 		if ctrltype == 'check' then
-			control.Control = createCheckBox(parent)
+			ctrl.Control = createCheckBox(parent)
+			ctrl.Control.OnChange = function()
+				print('Changed ' .. ctrl.Control.Caption)
+			end
 		end
 
-		if control.Control ~= nil then
-			control.Control.setCaption(control.Record.Description)
-
-			-- add successfully created child to 'Children' table
-			table.insert(parent.Children, control.Control)
+		if ctrl.Control ~= nil then
+			ctrl.Control.setCaption(ctrl.Record.Description)
 
 			-- anchor new control to sibling
 			if sibling_count > 0 then
-				control.Control.AnchorSideTop.Control = parent.Children[sibling_count]
-				control.Control.AnchorSideTop.Side = asrBottom
+				ctrl.Control.AnchorSideTop.Control = parent.getControl(sibling_count - 1)
+				ctrl.Control.AnchorSideTop.Side = asrBottom
+			end
+
+			-- disable for non-readable records
+			if not ctrl.Record.IsReadable then
+				ctrl.Control.setEnabled(false)
 			end
 		end
 	end
 
-	return control
+	return ctrl
 end
 
 --- Function to center a sub-window on the main Form
