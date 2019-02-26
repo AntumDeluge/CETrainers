@@ -77,10 +77,8 @@ function createControl(ctrltype, rec, parent)
 				ctrl.Control.AnchorSideTop.Side = asrBottom
 			end
 
-			-- disable for non-readable records
-			if not ctrl.Record.IsReadable then
-				ctrl.Control.setEnabled(false)
-			end
+			-- add to list of accessible controls
+			table.insert(mmu.controls, ctrl)
 		end
 	end
 
