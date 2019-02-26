@@ -70,9 +70,7 @@ local function createCheckValueControl(ctrl, parent)
 	end
 
 	ctrl.Control.OnChange = function(sender)
-		print('Record: ' .. ctrl.Record.Description)
 		if not ctrl.synchronized() then
-			print('Changing ...')
 			if sender == ctrl.Control then
 				if ctrl.Control.Checked then
 					ctrl.Record.Value = '1'
