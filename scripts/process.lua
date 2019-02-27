@@ -108,7 +108,7 @@ process.setName = function(pName)
 		dialog.close()
 	end
 
-	centerOnMainWindow(dialog)
+	mmu.centerOnMainWindow(dialog)
 	dialog.showModal()
 
 	local modalResult = dialog.ModalResult
@@ -162,7 +162,7 @@ local createProgressDialog = function(pName)
 	btnCancel.OnClick = dialog.close
 	]]
 
-	centerOnMainWindow(dialog)
+	mmu.centerOnMainWindow(dialog)
 
 	-- create timer to step progress bar
 	local reverse = false
@@ -263,7 +263,7 @@ process.attach = function(pName)
 
 	-- refresh accessible controls
 	if PID ~= nil then
-		refreshControls()
+		mmu.refreshControls()
 	end
 
 	return PID

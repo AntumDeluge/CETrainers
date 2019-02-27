@@ -18,9 +18,9 @@ end
 dofile('scripts/window.lua')
 
 -- record controls
-local instantDeath = createControl('check', 'Instant Death', tabs)
-local autoEndStage = createControl('check', 'Auto End Stage', tabs)
+local instantDeath = mmu.createControl('check', 'Instant Death', tabs)
+local autoEndStage = mmu.createControl('check', 'Auto End Stage', tabs)
 
-refreshControls()
+mmu.refreshControls()
 
 mmu.Frame.show()

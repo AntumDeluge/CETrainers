@@ -1,4 +1,9 @@
 
+--- Global Functions
+--
+-- @classmod functions
+
+
 --- Function to add startup error/warning message.
 mmu.addError = function(msg, label)
 	if label == nil then
@@ -13,15 +18,8 @@ mmu.addWarning = function(msg)
 	mmu.addError(msg, 'WARNING')
 end
 
--- usable control types
-local control_types = {
-	-- a 'check' simply enables/disables a memory record
-	check = {'check', 'chck', 'chk',},
-	-- a 'checkvalue' manipulates the value of the record instead of its enabled state
-	'checkvalue',
-}
 
-function refreshControls()
+function mmu.refreshControls()
 	local pAttached = getOpenedProcessID() ~= 0
 	for _, ctrl in pairs(mmu.controls) do
 		if not pAttached then
@@ -37,6 +35,7 @@ function refreshControls()
 		end
 	end
 end
+
 
 local function createCheckControl(ctrl, parent)
 	ctrl.Type = 'check'
@@ -64,6 +63,7 @@ local function createCheckControl(ctrl, parent)
 	end
 	-- TODO: listen for changes from main Cheat Engine process
 end
+
 
 local function createCheckValueControl(ctrl, parent)
 	ctrl.Type = 'checkvalue'
@@ -102,13 +102,22 @@ local function createCheckValueControl(ctrl, parent)
 	end
 end
 
+
+-- usable control types
+local control_types = {
+	-- a 'check' simply enables/disables a memory record
+	check = {'check', 'chck', 'chk',},
+	-- a 'checkvalue' manipulates the value of the record instead of its enabled state
+	'checkvalue',
+}
+
 --- Function to create a control based on control types.
 --
--- @function createControl
+-- @function mmu.createControl
 -- @tparam string ctrltype
 -- @param rec
 -- @tparam WinControl parent
-function createControl(ctrltype, rec, parent)
+function mmu.createControl(ctrltype, rec, parent)
 	local sibling_count = parent.ControlCount
 
 	local ctrl = {}
@@ -165,11 +174,12 @@ function createControl(ctrltype, rec, parent)
 	return ctrl
 end
 
+
 --- Function to center a sub-window on the main Form
 --
--- @function centerOnMainWindow
+-- @function mmu.centerOnMainWindow
 -- @tparam Form form
-function centerOnMainWindow(form)
+function mmu.centerOnMainWindow(form)
 	--local mw = getMainForm()
 	local x = mmu.Frame.Left + (mmu.Frame.Width - form.Width) / 2
 	local y = mmu.Frame.Top + (mmu.Frame.Height - form.Height) / 2

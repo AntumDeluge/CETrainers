@@ -33,7 +33,7 @@ miOpen.Bitmap = bmpOpen.getBitmap()
 local miRefresh = createMenuItem(menuFile)
 miRefresh.setCaption('Refresh Controls')
 miRefresh.Shortcut = 'Ctrl+R'
-miRefresh.onClick = refreshControls
+miRefresh.onClick = mmu.refreshControls
 
 local bmpRefresh = createPicture()
 bmpRefresh.loadFromFile('data/bitmap/menu/refresh.png')

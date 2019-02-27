@@ -19,7 +19,7 @@ dofile('scripts/window.lua')
 local pgGeneral = dofile('scripts/pages/general.lua')
 local pgTools = dofile('scripts/pages/tools.lua')
 
-refreshControls()
+mmu.refreshControls()
 
 mmu.Frame.show()
 
