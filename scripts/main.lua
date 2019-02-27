@@ -58,16 +58,3 @@ tabs = dofile('scripts/tabs.lua')
 -- make main window visible
 mmu.Frame.ShowInTaskBar = 'stAlways'
 mmu.Frame.centerScreen()
-
--- override show method to display error messages
-local showOrig = mmu.Frame.show
-mmu.Frame.show = function()
-	showOrig()
-
-	-- Show any errors/warnings from startup
-	if #mmu.errors > 0 then
-		for idx, msg in pairs(mmu.errors) do
-			showMessage(msg)
-		end
-	end
-end

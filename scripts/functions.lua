@@ -27,6 +27,21 @@ mmu.shutdown = function()
 end
 
 
+--- Displays the trainer main window.
+--
+-- @function mmu.show
+mmu.show = function()
+	mmu.Frame.show()
+
+	-- Show any errors/warnings from startup
+	if #mmu.errors > 0 then
+		for idx, msg in pairs(mmu.errors) do
+			showMessage(msg)
+		end
+	end
+end
+
+
 --- Function to add startup error/warning message.
 mmu.addError = function(msg, label)
 	if label == nil then

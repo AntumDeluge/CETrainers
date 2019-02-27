@@ -18,4 +18,4 @@ local pgTools = dofile('scripts/pages/tools.lua')
 
 mmu.refreshControls()
 
-mmu.Frame.show()
+mmu.show()

@@ -20,4 +20,4 @@ local autoEndStage = mmu.createControl('check', 'Auto End Stage', tabs)
 
 mmu.refreshControls()
 
-mmu.Frame.show()
+mmu.show()
