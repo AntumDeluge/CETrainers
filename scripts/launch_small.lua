@@ -14,9 +14,6 @@ if ret then
 	do return ret end
 end
 
--- main window construction
-dofile('scripts/window.lua')
-
 -- record controls
 local instantDeath = mmu.createControl('check', 'Instant Death', tabs)
 local autoEndStage = mmu.createControl('check', 'Auto End Stage', tabs)

@@ -13,9 +13,6 @@ if ret then
 	do return ret end
 end
 
--- main window construction
-dofile('scripts/window.lua')
-
 local pgGeneral = dofile('scripts/pages/general.lua')
 local pgTools = dofile('scripts/pages/tools.lua')
 
