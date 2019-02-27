@@ -1,18 +1,18 @@
 
 local tabs = nil
 if mmu.small then
-	tabs = createPanel(MainWindow)
+	tabs = createPanel(mmu.Frame)
 else
-	tabs = createPageControl(MainWindow)
+	tabs = createPageControl(mmu.Frame)
 end
 
 tabs.AnchorSideTop.Control = mmu.processLabel
 tabs.AnchorSideTop.Side = asrBottom
-tabs.AnchorSideBottom.Control = MainWindow
+tabs.AnchorSideBottom.Control = mmu.Frame
 tabs.AnchorSideBottom.Side = asrBottom
-tabs.AnchorSideLeft.Control = MainWindow
+tabs.AnchorSideLeft.Control = mmu.Frame
 tabs.AnchorSideLeft.Side = asrLeft
-tabs.AnchorSideRight.Control = MainWindow
+tabs.AnchorSideRight.Control = mmu.Frame
 tabs.AnchorSideRight.Side = asrRight
 tabs.Anchors = '[akTop,akBottom,akLeft,akRight]'
 tabs.BorderSpacing.Left = 2

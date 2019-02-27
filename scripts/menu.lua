@@ -1,6 +1,6 @@
 
 -- create a menu bar for main window
-local menuBar = createMainMenu(MainWindow)
+local menuBar = createMainMenu(mmu.Frame)
 local menuBarItems = menuBar.getItems()
 
 -- 'File' main menu
@@ -70,4 +70,4 @@ menuHelp.add(miAbout)
 menuBar.Items.add(menuFile)
 menuBar.Items.add(menuHelp)
 
-MainWindow.setMenu(menuBar)
+mmu.Frame.setMenu(menuBar)

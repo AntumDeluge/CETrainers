@@ -7,23 +7,23 @@ end
 local standalone = TrainerOrigin ~= nil
 
 -- create main window but do not show it yet
-MainWindow = createForm(false)
-MainWindow.BorderStyle = bsSizeable
+mmu.Frame = createForm(false)
+mmu.Frame.BorderStyle = bsSizeable
 
 -- set minimum size
-MainWindow.Constraints.MinWidth = 320
-MainWindow.Constraints.MinHeight = 350
+mmu.Frame.Constraints.MinWidth = 320
+mmu.Frame.Constraints.MinHeight = 350
 
 -- icon displayed in the main interface
 local icon = createPicture()
 icon.loadFromFile('data/bitmap/icon.png')
-MainWindow.Icon = icon.getBitmap()
+mmu.Frame.Icon = icon.getBitmap()
 
 
 -- closes trainer
 local function shutdown()
 	-- free memory allocated for the main interface
-	MainWindow.destroy()
+	mmu.Frame.destroy()
 	-- free memory allocated to main global table
 	mmu = nil
 
@@ -36,15 +36,15 @@ local function shutdown()
 end
 
 -- text displayed in title bar
-MainWindow.setCaption(mmu.name)
+mmu.Frame.setCaption(mmu.name)
 
 dofile('scripts/menu.lua')
 
 -- action to take when 'X-ed' out of
-MainWindow.onClose = shutdown
+mmu.Frame.onClose = shutdown
 
-mmu.processLabel = createLabel(MainWindow)
-mmu.processLabel.anchorSideLeft.control = MainWindow
+mmu.processLabel = createLabel(mmu.Frame)
+mmu.processLabel.anchorSideLeft.control = mmu.Frame
 mmu.processLabel.anchorSideLeft.side = asrCenter
 
 local loadedProcess = getOpenedProcessID()
@@ -58,12 +58,12 @@ end
 tabs = dofile('scripts/tabs.lua')
 
 -- make main window visible
-MainWindow.ShowInTaskBar = 'stAlways'
-MainWindow.centerScreen()
+mmu.Frame.ShowInTaskBar = 'stAlways'
+mmu.Frame.centerScreen()
 
 -- override show method to display error messages
-local showOrig = MainWindow.show
-MainWindow.show = function()
+local showOrig = mmu.Frame.show
+mmu.Frame.show = function()
 	showOrig()
 
 	-- Show any errors/warnings from startup

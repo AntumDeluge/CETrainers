@@ -90,10 +90,10 @@ about.showDialog = function()
 	luaInfo.AnchorSideTop.Side = asrBottom
 
 	-- place dialog over main window
-	local x_comp = (MainWindow.Width - aboutDialog.Width) / 2
-	local y_comp = (MainWindow.Height - aboutDialog.Height) / 2
-	aboutDialog.Left = MainWindow.Left + x_comp
-	aboutDialog.Top = MainWindow.Top + y_comp
+	local x_comp = (mmu.Frame.Width - aboutDialog.Width) / 2
+	local y_comp = (mmu.Frame.Height - aboutDialog.Height) / 2
+	aboutDialog.Left = mmu.Frame.Left + x_comp
+	aboutDialog.Top = mmu.Frame.Top + y_comp
 
 	-- show the dialog
 	aboutDialog.showModal()

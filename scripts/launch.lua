@@ -21,7 +21,7 @@ local pgTools = dofile('scripts/pages/tools.lua')
 
 refreshControls()
 
-MainWindow.show()
+mmu.Frame.show()
 
 -- Show any errors/warnings from startup
 if #mmu.errors > 0 then

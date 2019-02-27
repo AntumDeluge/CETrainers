@@ -23,4 +23,4 @@ local autoEndStage = createControl('check', 'Auto End Stage', tabs)
 
 refreshControls()
 
-MainWindow.show()
+mmu.Frame.show()

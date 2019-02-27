@@ -171,8 +171,8 @@ end
 -- @tparam Form form
 function centerOnMainWindow(form)
 	--local mw = getMainForm()
-	local x = MainWindow.Left + (MainWindow.Width - form.Width) / 2
-	local y = MainWindow.Top + (MainWindow.Height - form.Height) / 2
+	local x = mmu.Frame.Left + (mmu.Frame.Width - form.Width) / 2
+	local y = mmu.Frame.Top + (mmu.Frame.Height - form.Height) / 2
 
 	form.setPosition(x, y)
 end
