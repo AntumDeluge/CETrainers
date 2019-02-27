@@ -7,6 +7,15 @@ local menuBarItems = menuBar.getItems()
 local menuFile = createMenuItem(menuBar)
 menuFile.setCaption('File')
 
+-- Picture object to load icons for menu items
+local icon = createPicture()
+
+-- Function to retrieve an icon for use with menu items.
+local getIcon = function(img)
+	icon.loadFromFile('data/bitmap/menu/' .. img .. '.png')
+	return icon.getBitmap()
+end
+
 -- 'Open' menu item
 local miOpen = createMenuItem(menuFile)
 local pName = nil
@@ -22,10 +31,7 @@ miOpen.onClick = function()
 		end
 	end
 end
-
-local bmpOpen = createPicture()
-bmpOpen.loadFromFile('data/bitmap/menu/process.png')
-miOpen.Bitmap = bmpOpen.getBitmap()
+miOpen.Bitmap = getIcon('process')
 
 --- 'Refresh' menu item.
 --
@@ -34,19 +40,13 @@ local miRefresh = createMenuItem(menuFile)
 miRefresh.setCaption('Refresh Controls')
 miRefresh.Shortcut = 'Ctrl+R'
 miRefresh.onClick = mmu.refreshControls
-
-local bmpRefresh = createPicture()
-bmpRefresh.loadFromFile('data/bitmap/menu/refresh.png')
-miRefresh.Bitmap = bmpRefresh.getBitmap()
+miRefresh.Bitmap = getIcon('refresh')
 
 -- 'Quit' menu item
 local miQuit = createMenuItem(menuFile)
 miQuit.setCaption('Quit')
 miQuit.onClick = shutdown
-
-local bmpQuit = createPicture()
-bmpQuit.loadFromFile('data/bitmap/menu/quit.png')
-miQuit.Bitmap = bmpQuit.getBitmap()
+miQuit.Bitmap = getIcon('quit')
 
 menuFile.add(miOpen)
 menuFile.add(miRefresh)
@@ -63,15 +63,15 @@ miAbout.onClick = function()
 	local about = dofile('scripts/about.lua')
 	about.showDialog()
 end
-
-local bmpQuit = createPicture()
-bmpQuit.loadFromFile('data/bitmap/menu/info.png')
-miAbout.Bitmap = bmpQuit.getBitmap()
+miAbout.Bitmap = getIcon('info')
 
 menuHelp.add(miAbout)
 
 -- add items to menu bar
 menuBar.Items.add(menuFile)
 menuBar.Items.add(menuHelp)
+
+-- generating icons no longer needed
+icon.destroy()
 
 mmu.Frame.setMenu(menuBar)
