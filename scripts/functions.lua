@@ -187,6 +187,7 @@ function mmu.createControl(ctrltype, rec, parent)
 
 	if not validControl then
 		mmu.addWarning('Cannot create control type: ' .. ctrltype)
+		ctrl = nil
 	else
 		-- control creation
 		if ctrltype == 'check' then
