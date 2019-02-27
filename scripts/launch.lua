@@ -8,14 +8,24 @@ end
 -- define global table before loading main script
 mmu = {}
 
-local ret = dofile('scripts/main.lua')
-if ret then
-	do return ret end
+-- Function to launch the trainer interface & catch errors.
+local startup = function()
+	local ret = dofile('scripts/main.lua')
+	if ret then
+		do return ret end
+	end
+
+	local pgGeneral = dofile('scripts/pages/general.lua')
+	local pgTools = dofile('scripts/pages/tools.lua')
+
+	mmu.refreshControls()
+	mmu.show()
 end
 
-local pgGeneral = dofile('scripts/pages/general.lua')
-local pgTools = dofile('scripts/pages/tools.lua')
-
-mmu.refreshControls()
-
-mmu.show()
+local success, err = pcall(startup)
+if not success then
+	-- free mmu object
+	mmu = nil
+	-- show error message
+	showMessage('ERROR: ' .. err)
+end
