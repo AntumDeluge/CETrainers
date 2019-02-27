@@ -14,5 +14,5 @@ mmu.errors = {}
 --- Available controls.
 mmu.controls = {}
 
-record = dofile('scripts/record.lua')
+mmu.Record = dofile('scripts/record.lua')
 dofile('scripts/functions.lua')

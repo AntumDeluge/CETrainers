@@ -5,7 +5,7 @@ pgTools.AutoScroll = true
 
 --- Parent node/header record.
 local parentID = 215
-local recTools = record.get(parentID, true)
+local recTools = mmu.Record.get(parentID, true)
 
 local idx = 0
 while idx < recTools.Count do

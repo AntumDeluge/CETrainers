@@ -123,7 +123,7 @@ function mmu.createControl(ctrltype, rec, parent)
 	local ctrl = {}
 
 	if rec ~= nil and type(rec) ~= 'userdata' then
-		ctrl.Record = record.get(rec)
+		ctrl.Record = mmu.Record.get(rec)
 	else
 		ctrl.Record = rec
 	end
