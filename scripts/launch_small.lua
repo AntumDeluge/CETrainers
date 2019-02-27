@@ -1,4 +1,10 @@
 
+-- only allow running once instance in same process
+if mmu ~= nil then
+	showMessage('Trainer is already running')
+	do return end
+end
+
 -- define global table before loading main script
 mmu = {}
 mmu.small = true
