@@ -64,6 +64,10 @@ miAbout.onClick = function()
 	about.showDialog()
 end
 
+local bmpQuit = createPicture()
+bmpQuit.loadFromFile('data/bitmap/menu/info.png')
+miAbout.Bitmap = bmpQuit.getBitmap()
+
 menuHelp.add(miAbout)
 
 -- add items to menu bar
