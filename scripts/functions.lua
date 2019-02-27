@@ -186,3 +186,60 @@ function mmu.centerOnMainWindow(form)
 
 	form.setPosition(x, y)
 end
+
+
+--- Function to create a string builder object.
+--
+-- @function mmu.createStringBuilder
+mmu.createStringBuilder = function(str)
+	local sb = {}
+	sb.Strings = {}
+
+	if str ~= nil then
+		table.insert(sb.Strings, str)
+	end
+
+	-- Adds a string to end of strings list.
+	sb.append = function(str)
+		table.insert(sb.Strings, str)
+	end
+	sb.add = sb.append
+
+	-- Adds a string to front of strings list.
+	sb.prepend = function(str)
+		table.insert(sb.Strings, 1, str)
+	end
+
+	-- Add a string to given index of string list.
+	sb.insert = function(idx, str)
+		if idx > #sb.Strings + 1 then
+			idx = #sb.Strings + 1
+		end
+
+		table.insert(sb.Strings, idx, str)
+	end
+
+	-- Creates a single string from string list
+	sb.toString = function()
+		local str = ""
+		for _, S in pairs(sb.Strings) do
+			str = str .. S
+		end
+
+		return str
+	end
+	sb.tostring = sb.toString
+
+	-- Retrieves number of stored strings.
+	sb.count = function()
+		return #sb.Strings
+	end
+
+	-- "Destroys" string builder object.
+	sb.destroy = function()
+		sb = nil
+		return sb == nil
+	end
+
+	return sb
+end
