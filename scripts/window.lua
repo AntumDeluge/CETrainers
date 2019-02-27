@@ -24,6 +24,8 @@ MainWindow.Icon = icon.getBitmap()
 local function shutdown()
 	-- free memory allocated for the main interface
 	MainWindow.destroy()
+	-- free memory allocated to main global table
+	mmu = nil
 
 	-- trainer is run as a standalone executable
 	if standalone then
