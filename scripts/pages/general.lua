@@ -8,6 +8,7 @@ local checkBoxes = {
 	'Invincibility',
 	'10+ Lives',
 	'Auto End Stage',
+	'No Shot Limit',
 }
 
 for _, c in pairs(checkBoxes) do
