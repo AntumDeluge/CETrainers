@@ -1,8 +1,12 @@
 
-dofile('scripts/main.lua')
-
--- do this before importing window.lua
+-- define global table before loading main script
+mmu = {}
 mmu.small = true
+
+local ret = dofile('scripts/main.lua')
+if ret then
+	do return ret end
+end
 
 -- main window construction
 dofile('scripts/window.lua')

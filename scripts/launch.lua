@@ -1,5 +1,12 @@
 
-dofile('scripts/main.lua')
+-- define global table before loading main script
+mmu = {}
+
+local ret = dofile('scripts/main.lua')
+if ret then
+	do return ret end
+end
+
 -- main window construction
 dofile('scripts/window.lua')
 

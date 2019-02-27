@@ -1,8 +1,11 @@
 
 -- this script must be imported before anything else
 
--- main table
-mmu = {}
+if mmu == nil then
+	showMessage('ERROR: "mmu" table not defined.')
+	do return 1 end
+end
+
 mmu.name = 'MMU Trainer'
 
 --- Errors to be shown after window is visible.
