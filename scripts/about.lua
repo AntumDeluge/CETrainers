@@ -82,6 +82,13 @@ about.showDialog = function()
 		ceInfo.Font.Color = 0x0000FF
 	end
 
+	local luaInfo = createLabel(panel)
+	luaInfo.setCaption('Lua version ' .. _VERSION)
+	luaInfo.AnchorSideLeft.Control = panel
+	luaInfo.AnchorSideLeft.Side = asrCenter
+	luaInfo.AnchorSideTop.Control = ceInfo
+	luaInfo.AnchorSideTop.Side = asrBottom
+
 	-- place dialog over main window
 	local x_comp = (MainWindow.Width - aboutDialog.Width) / 2
 	local y_comp = (MainWindow.Height - aboutDialog.Height) / 2
