@@ -11,7 +11,7 @@ local getWindowList = function()
 	for i=0, names.getCount()-1 do
 		local tmp = names.getString(i)
 		local N = tmp:sub(10,255)
-		local ID = tonumber("0x" .. tmp:sub(1,8))
+		local ID = tonumber('0x' .. tmp:sub(1,8))
 
 		local added = false
 		for _, p in pairs(wList) do
@@ -26,7 +26,8 @@ local getWindowList = function()
 			for _, m in pairs(enumModules(ID)) do
 				-- only include processes using GUI libraries
 				-- FIXME: not cross-platform
-				if string.lower(m.Name) == "shell32.dll" then
+				-- FIXME: may be a built-in function for retrieving all windows
+				if string.lower(m.Name) == 'shell32.dll' then
 					wList[i] = {
 						Name = N,
 						PID = ID,
@@ -83,7 +84,7 @@ process.setName = function(pName)
 
 	local getValue = function()
 		-- remove leading & trailing whitespace
-		return input.Text:gsub("^%s*(.-)%s*$", "%1")
+		return input.Text:gsub('^%s*(.-)%s*$', '%1')
 	end
 
 	local isEmpty = function()
@@ -251,7 +252,7 @@ process.attach = function(pName)
 			openProcess(proc.PID)
 			PID = proc.PID
 		else
-			showMessage("Process not found: " .. pName)
+			showMessage('Process not found: ' .. pName)
 		end
 
 		progress.stop(true)

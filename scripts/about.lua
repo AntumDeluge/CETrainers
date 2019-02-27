@@ -10,7 +10,7 @@ about.showDialog = function()
 	-- dialog to display information about trainer
 	local aboutDialog = createForm(false)
 	aboutDialog.BorderStyle = bsDialog
-	aboutDialog.setCaption("About " .. mmu.name)
+	aboutDialog.setCaption('About ' .. mmu.name)
 	aboutDialog.setSize(W, H)
 
 	-- main panel
@@ -21,16 +21,16 @@ about.showDialog = function()
 	-- description text
 	local descr1 = createLabel(panel)
 	if mmu.small then
-		descr1.setCaption("Minimalist Trainer for")
+		descr1.setCaption('Minimalist Trainer for')
 	else
-		descr1.setCaption("Trainer for")
+		descr1.setCaption('Trainer for')
 	end
 	descr1.Top = H / 4
 	local descr2 = createLabel(panel)
-	descr2.setCaption("Mega Man Unlimited")
+	descr2.setCaption('Mega Man Unlimited')
 	for _, d in pairs({descr1, descr2}) do
 		d.Font.Size = 12
-		--setProperty(d, "alignment", "taCenter")
+		--setProperty(d, 'alignment', 'taCenter')
 		d.anchorSideLeft.control = panel
 		d.anchorSideLeft.side = asrCenter
 	end
@@ -39,12 +39,12 @@ about.showDialog = function()
 	descr2.Font.Color = 0xFF0000
 	descr2.Cursor = -21 -- variable "crHandPoint" does not work
 	descr2.OnClick = function(sender)
-		shellExecute("http://megaphilx.com/index.php/home/games/mega-man-unlimited/")
+		shellExecute('http://megaphilx.com/index.php/home/games/mega-man-unlimited/')
 		descr2.Font.Color = 0x0000FF
 	end
 
 	local author = createLabel(panel)
-	author.setCaption("Created by Jordan Irwin (AntumDeluge)")
+	author.setCaption('Created by Jordan Irwin (AntumDeluge)')
 	author.anchorSideLeft.control = panel
 	author.anchorSideLeft.side = asrCenter
 	author.anchorSideTop.control = descr2
@@ -53,9 +53,9 @@ about.showDialog = function()
 
 	local version = createLabel(panel)
 	if ver.UNSTABLE then
-		version.setCaption("This software is unstable and likely will not work correctly")
+		version.setCaption('This software is unstable and likely will not work correctly')
 	else
-		version.setCaption("Version: " .. ver.full)
+		version.setCaption('Version: ' .. ver.full)
 	end
 	version.anchorSideLeft.control = panel
 	version.anchorSideLeft.side = asrCenter
@@ -64,12 +64,12 @@ about.showDialog = function()
 	version.BorderSpacing.top = 20
 
 	-- Cheat Engine info
-	local ceArch = "32"
+	local ceArch = '32'
 	if cheatEngineIs64Bit() then
-		ceArch = "64"
+		ceArch = '64'
 	end
 	local ceInfo = createLabel(panel)
-	ceInfo.setCaption("Made with Cheat Engine " .. tostring(getCEVersion()) .. " " .. ceArch .. "-bit by Dark Byte")
+	ceInfo.setCaption('Made with Cheat Engine ' .. tostring(getCEVersion()) .. ' ' .. ceArch .. '-bit by Dark Byte')
 	ceInfo.anchorSideLeft.control = panel
 	ceInfo.anchorSideLeft.side = asrCenter
 	ceInfo.anchorSideTop.control = version
@@ -78,7 +78,7 @@ about.showDialog = function()
 	ceInfo.Font.Color = 0xFF0000
 	ceInfo.Cursor = -21 -- variable "crHandPoint" does not work
 	ceInfo.OnClick = function(sender)
-		shellExecute("https://cheatengine.org/")
+		shellExecute('https://cheatengine.org/')
 		ceInfo.Font.Color = 0x0000FF
 	end
 

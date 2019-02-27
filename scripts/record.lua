@@ -6,7 +6,7 @@ local addressList = getAddressList()
 record.get = function(r, byid)
 	local recInput = r
 	local recType = type(r)
-	if recType == "string" then
+	if recType == 'string' then
 		r = addressList.getMemoryRecordByDescription(r)
 	else
 		if byid then
