@@ -45,7 +45,7 @@ miRefresh.Bitmap = getIcon('refresh')
 -- 'Quit' menu item
 local miQuit = createMenuItem(menuFile)
 miQuit.setCaption('Quit')
-miQuit.onClick = shutdown
+miQuit.onClick = mmu.shutdown
 miQuit.Bitmap = getIcon('quit')
 
 menuFile.add(miOpen)

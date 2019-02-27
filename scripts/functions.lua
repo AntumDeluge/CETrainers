@@ -4,6 +4,29 @@
 -- @classmod functions
 
 
+-- Determines if run as standalone executable.
+local standalone = TrainerOrigin ~= nil
+
+--- Closes trainer & optionally Cheat Engine.
+--
+-- The main cheat engine process is not closed if not started as a trainer.
+--
+-- @function mmu.shutdown
+mmu.shutdown = function()
+	-- free memory allocated for the main interface
+	mmu.Frame.destroy()
+	-- free memory allocated to main global table
+	mmu = nil
+
+	-- trainer is run as a standalone executable
+	if standalone then
+		-- shuts down the main CE process
+		closeCE()
+		return caFree
+	end
+end
+
+
 --- Function to add startup error/warning message.
 mmu.addError = function(msg, label)
 	if label == nil then
