@@ -161,6 +161,8 @@ function mmu.createControl(ctrltype, rec, parent, section, helpstring)
 		assert(section ~= nil, '"section" argument must be set if using helpstring')
 	end
 
+	assert(parent ~= nil, 'Parent object cannot be nil')
+
 	local sibling_count = parent.ControlCount
 
 	local ctrl = {}
