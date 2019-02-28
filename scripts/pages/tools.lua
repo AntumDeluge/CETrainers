@@ -1,5 +1,5 @@
 
-local pgTools = tabs.addTab()
+local pgTools = mmu.Tabs.addTab()
 pgTools.setCaption('Tools/Weapons')
 pgTools.AutoScroll = true
 

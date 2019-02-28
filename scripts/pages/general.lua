@@ -1,4 +1,4 @@
-local pgGeneral = tabs.addTab()
+local pgGeneral = mmu.Tabs.addTab()
 pgGeneral.setCaption('General')
 
 local checkBoxes = {

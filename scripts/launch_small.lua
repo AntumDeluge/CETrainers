@@ -17,8 +17,8 @@ local startup = function()
 	end
 
 	-- record controls
-	local instantDeath = mmu.createControl('check', 'Instant Death', tabs, 'General Controls', 'Ends turn as soon as Mega Man is damaged.')
-	local autoEndStage = mmu.createControl('check', 'Auto End Stage', tabs)
+	local instantDeath = mmu.createControl('check', 'Instant Death', mmu.Tabs, 'General Controls', 'Ends turn as soon as Mega Man is damaged.')
+	local autoEndStage = mmu.createControl('check', 'Auto End Stage', mmu.Tabs)
 	autoEndStage.setHelpString('General Controls', 'Loads continue screen regardless of how many lives are left.')
 
 	mmu.refreshControls()

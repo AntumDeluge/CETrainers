@@ -53,7 +53,7 @@ else
 end
 
 -- tabbed interface (single panel for minimalist trainer)
-tabs = dofile('scripts/tabs.lua')
+mmu.Tabs = dofile('scripts/tabs.lua')
 
 -- make main window visible
 mmu.Frame.ShowInTaskBar = 'stAlways'
