@@ -3,7 +3,7 @@ local pgGeneral = nil
 
 local checkboxes = {
 	{'Instant Death', 'Ends turn as soon as Mega Man is damaged.',},
-	{'Auto End Stage', 'Loads continue screen regardless of how many lives are left.',},
+	{'Auto End Stage', 'Loads continue screen after turn ends regardless of how many lives are left.',},
 }
 
 if mmu.small then
@@ -13,11 +13,11 @@ else
 	pgGeneral.setCaption('General')
 
 	mmu.tableConcat(checkboxes, {
-		'Infinite Lives',
-		'Infinite Weapon Energy',
-		'Invincibility',
-		'10+ Lives',
-		'No Shot Limit',
+		{'Infinite Lives', 'Mega Man\'s lives will not decrease.',},
+		{'Infinite Weapon Energy', 'Special tools & weapons energy will not be depleted when used.',},
+		{'Invincibility', 'Mega Man takes no damage when colliding with enemies.',},
+		{'10+ Lives', 'Mega Man is not limited to a maximum of 9 lives (does not work in shop menu).',},
+		{'No Shot Limit', 'Mega Man can fire more than 3 shots at a time (applies to special weapons).',},
 	})
 end
 
