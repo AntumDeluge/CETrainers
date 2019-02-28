@@ -12,7 +12,7 @@ local checkBoxes = {
 }
 
 for _, c in pairs(checkBoxes) do
-	mmu.createControl('check', c, pgGeneral)
+	mmu.createControl('check', c, pgGeneral, 'General Controls')
 end
 
 return pgGeneral
