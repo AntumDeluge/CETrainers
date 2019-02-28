@@ -13,16 +13,38 @@ local standalone = TrainerOrigin ~= nil
 --
 -- @function mmu.shutdown
 mmu.shutdown = function()
-	-- free memory allocated for the main interface
-	mmu.Frame.destroy()
-	-- free memory allocated to main global table
-	mmu = nil
+	local cont = true
 
-	-- trainer is run as a standalone executable
-	if standalone then
-		-- shuts down the main CE process
-		closeCE()
-		return caFree
+	-- check for controls that should be disabled
+	local disable = {}
+	for _, ctrl in pairs(mmu.Controls) do
+		if ctrl.Release and ctrl.Record.Active then
+			table.insert(disable, ctrl.Control.Caption)
+		end
+	end
+
+	if #disable > 0 then
+		local sb = mmu.createStringBuilder('It is recommended to disable the following controls before shutting down:')
+		for _, D in pairs(disable) do
+			sb.append('\n  - ' .. D)
+		end
+		sb.append('\n\nIgnore this warning & continue with shutdown?')
+
+		cont = messageDialog(sb.toString(), mtWarning, mbYes, mbNo) == mrYes
+	end
+
+	if cont then
+		-- free memory allocated for the main interface
+		mmu.Frame.destroy()
+		-- free memory allocated to main global table
+		mmu = nil
+
+		-- trainer is run as a standalone executable
+		if standalone then
+			-- shuts down the main CE process
+			closeCE()
+			return caFree
+		end
 	end
 end
 
@@ -156,7 +178,9 @@ local control_types = {
 -- @param rec
 -- @tparam WinControl parent The parent object.
 -- @tparam string helpstring Information about control.
-function mmu.createControl(ctrltype, rec, parent, section, helpstring)
+-- @tparam string release Flag denoting control should be disabled before shutting down.
+-- @treturn table Table containing WinControl & MemoryRecord objects.
+function mmu.createControl(ctrltype, rec, parent, section, helpstring, release)
 	if helpstring ~= nil then
 		assert(section ~= nil, '"section" argument must be set if using helpstring')
 	end
@@ -166,6 +190,7 @@ function mmu.createControl(ctrltype, rec, parent, section, helpstring)
 	local sibling_count = parent.ControlCount
 
 	local ctrl = {}
+	ctrl.Release = release
 
 	if rec ~= nil and type(rec) ~= 'userdata' then
 		ctrl.Record = mmu.Record.get(rec)
