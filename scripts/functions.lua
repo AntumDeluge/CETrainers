@@ -173,6 +173,8 @@ function mmu.createControl(ctrltype, rec, parent, section, helpstring)
 		ctrl.Record = rec
 	end
 
+	assert(ctrl.Record ~= nil, 'Invalid record.')
+
 	-- check for valid control type
 	local validControl = false
 	for idx, c1 in pairs(control_types) do
