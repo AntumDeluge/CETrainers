@@ -303,3 +303,15 @@ mmu.createStringBuilder = function(str)
 
 	return sb
 end
+
+
+--- Adds contents of one table to another.
+--
+-- @function mmu.tableConcat
+-- @tparam table t1 The table being amended.
+-- @tparam table t2 The table whose contents are to be added.
+mmu.tableConcat = function(t1, t2)
+	for _, V in pairs(t2) do
+		table.insert(t1, V)
+	end
+end
