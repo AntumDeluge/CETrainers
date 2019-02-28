@@ -156,7 +156,11 @@ local control_types = {
 -- @param rec
 -- @tparam WinControl parent The parent object.
 -- @tparam string helpstring Information about control.
-function mmu.createControl(ctrltype, rec, parent, helpstring)
+function mmu.createControl(ctrltype, rec, parent, section, helpstring)
+	if helpstring ~= nil then
+		assert(section ~= nil, '"section" argument must be set if using helpstring')
+	end
+
 	local sibling_count = parent.ControlCount
 
 	local ctrl = {}
@@ -210,8 +214,17 @@ function mmu.createControl(ctrltype, rec, parent, helpstring)
 			table.insert(mmu.controls, ctrl)
 		end
 
+		-- Add help string info.
+		ctrl.setHelpString = function(s, v)
+			assert(s ~= nil, '"section" argument must be set.')
+			ctrl.HelpSection = s
+			ctrl.HelpString = v
+		end
+
 		-- add the help string
-		ctrl.HelpString = helpstring
+		if section ~= nil or helpstring ~= nil then
+			ctrl.setHelpString(section, helpstring)
+		end
 	end
 
 	return ctrl
