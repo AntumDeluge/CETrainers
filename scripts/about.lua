@@ -2,6 +2,7 @@
 local about = {}
 local ver = dofile('scripts/version.lua')
 
+
 -- displays an about dialog
 about.showDialog = function()
 	local W = 400
@@ -97,5 +98,70 @@ about.showDialog = function()
 	-- free memory after dialog is closed
 	aboutDialog.destroy()
 end
+
+
+-- displays a dialog with help information
+about.showHelp = function()
+	local W = 400
+	local H = 300
+
+	-- dialog to display information about trainer
+	local helpDialog = createForm(false)
+	helpDialog.BorderStyle = bsDialog
+	helpDialog.setCaption(mmu.name .. ' Usage')
+	helpDialog.setSize(W, H)
+
+	local textArea = createMemo(helpDialog)
+	textArea.Align = alClient
+	textArea.ReadOnly = true
+	textArea.setScrollbars(ssAutoVertical)
+
+	local text = mmu.createStringBuilder()
+	text.append('Trainer for Mega Man Unlimited --\n\nDescription:\n')
+	if mmu.small then
+		text.prepend('Minimal ')
+	end
+	text.prepend('-- ')
+
+	if mmu.small then
+		text.append('  This trainer only provides minimal functionality.')
+	else
+		text.append('  This is the full trainer.')
+	end
+
+	local sections = {}
+	-- fill in section information
+	for _, ctrl in pairs(mmu.controls) do
+		if ctrl.HelpSection ~= nil then
+			if sections[ctrl.HelpSection] == nil then
+				sections[ctrl.HelpSection] = mmu.createStringBuilder()
+			end
+		end
+
+		if ctrl.HelpString ~= nil then
+			sections[ctrl.HelpSection].append('\n  - ' .. ctrl.Control.Caption .. ': ' .. ctrl.HelpString)
+		elseif ctrl.HelpSection ~= nil then
+			sections[ctrl.HelpSection].append('\n  - ' .. ctrl.Control.Caption .. ' (no description)')
+		end
+	end
+
+	if not mmu.small then
+		local sb = mmu.createStringBuilder('\n  - Enables/Disables individual tools/weapons.')
+		sections['Tools/Weapons'] = sb
+	end
+
+	for sect, sb in pairs(sections) do
+		text.append('\n\n' .. sect .. ':')
+		text.append(sb.toString())
+	end
+
+	textArea.append(text.toString())
+	text.destroy()
+
+	mmu.centerOnMainWindow(helpDialog)
+	helpDialog.showModal()
+	helpDialog.destroy()
+end
+
 
 return about

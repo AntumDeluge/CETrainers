@@ -65,7 +65,17 @@ miAbout.onClick = function()
 end
 miAbout.Bitmap = getIcon('info')
 
+-- 'Help' menu item
+local miHelp = createMenuItem(menuHelp)
+miHelp.setCaption('Help')
+miHelp.onClick = function()
+	local about = dofile('scripts/about.lua')
+	about.showHelp()
+end
+miHelp.Bitmap = getIcon('help')
+
 menuHelp.add(miAbout)
+menuHelp.add(miHelp)
 
 -- add items to menu bar
 menuBar.Items.add(menuFile)
