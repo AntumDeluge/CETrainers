@@ -28,4 +28,9 @@ if not success then
 	mmu = nil
 	-- show error message
 	showMessage('ERROR: ' .. err)
+
+	if TrainerOrigin ~= nil then
+		-- close CE process
+		closeCE()
+	end
 end
