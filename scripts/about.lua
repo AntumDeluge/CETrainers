@@ -119,18 +119,32 @@ about.showHelp = function()
 	local text = mmu.createStringBuilder()
 	text.append('Trainer for Mega Man Unlimited --\n\nDescription:\n')
 	if mmu.small then
-		text.prepend('Minimal ')
+		text.prepend('Minimalist ')
 	end
 	text.prepend('-- ')
 
+	text.append('  Allows manipulating values in Mega Man Unlimited.')
+
 	if mmu.small then
-		text.append('  This trainer only provides minimal functionality.')
-	else
-		text.append('  This is the full trainer.')
+		text.append('\n\n  This is the minimalist version designed to simply make restarting stages faster. Useful for recording speed runs & such.')
 	end
 
-	local sections = {}
 	-- fill in section information
+	local sections = {}
+
+	local menuInfo = mmu.createStringBuilder()
+	menuInfo.append('\n  • File 🡆 Open Process: Attaches the running game\'s process to the trainer (default: MMU.exe).')
+	menuInfo.append('\n  • File 🡆 Refresh Controls: Refreshes the state of all the trainer\'s controls. Useful when a value in the game has changed but control has not updated to reflect it.')
+	menuInfo.append('\n  • File 🡆 Quit: Exits out of the trainer.')
+	menuInfo.append('\n  • Help 🡆 About: Display a window with information about Cheat Engine & this trainer')
+	menuInfo.append('\n  • Help 🡆 Help: Display this help window.')
+	sections['Menu'] = menuInfo
+
+	if not mmu.small then
+		local sb = mmu.createStringBuilder('\n  • Enables/Disables individual special tools & weapons.')
+		sections['Tools/Weapons'] = sb
+	end
+
 	for _, ctrl in pairs(mmu.controls) do
 		if ctrl.HelpSection ~= nil then
 			if sections[ctrl.HelpSection] == nil then
@@ -139,15 +153,10 @@ about.showHelp = function()
 		end
 
 		if ctrl.HelpString ~= nil then
-			sections[ctrl.HelpSection].append('\n  - ' .. ctrl.Control.Caption .. ': ' .. ctrl.HelpString)
+			sections[ctrl.HelpSection].append('\n  • ' .. ctrl.Control.Caption .. ': ' .. ctrl.HelpString)
 		elseif ctrl.HelpSection ~= nil then
-			sections[ctrl.HelpSection].append('\n  - ' .. ctrl.Control.Caption .. ' (no description)')
+			sections[ctrl.HelpSection].append('\n  • ' .. ctrl.Control.Caption .. ' (no description)')
 		end
-	end
-
-	if not mmu.small then
-		local sb = mmu.createStringBuilder('\n  - Enables/Disables individual tools/weapons.')
-		sections['Tools/Weapons'] = sb
 	end
 
 	for sect, sb in pairs(sections) do
