@@ -154,8 +154,9 @@ local control_types = {
 -- @function mmu.createControl
 -- @tparam string ctrltype
 -- @param rec
--- @tparam WinControl parent
-function mmu.createControl(ctrltype, rec, parent)
+-- @tparam WinControl parent The parent object.
+-- @tparam string helpstring Information about control.
+function mmu.createControl(ctrltype, rec, parent, helpstring)
 	local sibling_count = parent.ControlCount
 
 	local ctrl = {}
@@ -208,6 +209,9 @@ function mmu.createControl(ctrltype, rec, parent)
 			-- add to list of accessible controls
 			table.insert(mmu.controls, ctrl)
 		end
+
+		-- add the help string
+		ctrl.HelpString = helpstring
 	end
 
 	return ctrl
