@@ -1,0 +1,2 @@
+- errors emitted on shutdown do not free mmu object
+- Tools/Weapons controls do not refresh after opening process
