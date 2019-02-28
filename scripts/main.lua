@@ -6,16 +6,16 @@ if mmu == nil then
 	do return 1 end
 end
 
-mmu.name = 'MMU Trainer'
-if mmu.small then
-	mmu.name = 'Minimalist ' .. mmu.name
+mmu.Name = 'MMU Trainer'
+if mmu.Small then
+	mmu.Name = 'Minimalist ' .. mmu.Name
 end
 
 --- Errors to be shown after window is visible.
-mmu.errors = {}
+mmu.Errors = {}
 
 --- Available controls.
-mmu.controls = {}
+mmu.Controls = {}
 
 mmu.Record = dofile('scripts/record.lua')
 dofile('scripts/functions.lua')
@@ -34,22 +34,22 @@ icon.loadFromFile('data/bitmap/icon.png')
 mmu.Frame.Icon = icon.getBitmap()
 
 -- text displayed in title bar
-mmu.Frame.setCaption(mmu.name)
+mmu.Frame.setCaption(mmu.Name)
 
 dofile('scripts/menu.lua')
 
 -- action to take when 'X-ed' out of
 mmu.Frame.onClose = mmu.shutdown
 
-mmu.processLabel = createLabel(mmu.Frame)
-mmu.processLabel.anchorSideLeft.control = mmu.Frame
-mmu.processLabel.anchorSideLeft.side = asrCenter
+mmu.ProcessLabel = createLabel(mmu.Frame)
+mmu.ProcessLabel.anchorSideLeft.control = mmu.Frame
+mmu.ProcessLabel.anchorSideLeft.side = asrCenter
 
 local loadedProcess = getOpenedProcessID()
 if loadedProcess > 0 then
-	mmu.processLabel.setCaption('Attached process: ' .. tostring(loadedProcess))
+	mmu.ProcessLabel.setCaption('Attached process: ' .. tostring(loadedProcess))
 else
-	mmu.processLabel.setCaption('Attached process:')
+	mmu.ProcessLabel.setCaption('Attached process:')
 end
 
 -- tabbed interface (single panel for minimalist trainer)

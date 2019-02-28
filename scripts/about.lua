@@ -11,7 +11,7 @@ about.showDialog = function()
 	-- dialog to display information about trainer
 	local aboutDialog = createForm(false)
 	aboutDialog.BorderStyle = bsDialog
-	aboutDialog.setCaption('About ' .. mmu.name)
+	aboutDialog.setCaption('About ' .. mmu.Name)
 	aboutDialog.setSize(W, H)
 
 	-- main panel
@@ -21,7 +21,7 @@ about.showDialog = function()
 
 	-- description text
 	local descr1 = createLabel(panel)
-	if mmu.small then
+	if mmu.Small then
 		descr1.setCaption('Minimalist Trainer for')
 	else
 		descr1.setCaption('Trainer for')
@@ -108,7 +108,7 @@ about.showHelp = function()
 	-- dialog to display information about trainer
 	local helpDialog = createForm(false)
 	helpDialog.BorderStyle = bsDialog
-	helpDialog.setCaption(mmu.name .. ' Usage')
+	helpDialog.setCaption(mmu.Name .. ' Usage')
 	helpDialog.setSize(W, H)
 
 	local textArea = createMemo(helpDialog)
@@ -118,14 +118,14 @@ about.showHelp = function()
 
 	local text = mmu.createStringBuilder()
 	text.append('Trainer for Mega Man Unlimited --\n\nDescription:\n')
-	if mmu.small then
+	if mmu.Small then
 		text.prepend('Minimalist ')
 	end
 	text.prepend('-- ')
 
 	text.append('  Allows manipulating values in Mega Man Unlimited.')
 
-	if mmu.small then
+	if mmu.Small then
 		text.append('\n\n  This is the minimalist version designed to simply make restarting stages faster. Useful for recording speed runs & such.')
 	end
 
@@ -140,12 +140,12 @@ about.showHelp = function()
 	menuInfo.append('\n  • Help 🡆 Help: Display this help window.')
 	sections['Menu'] = menuInfo
 
-	if not mmu.small then
+	if not mmu.Small then
 		local sb = mmu.createStringBuilder('\n  • Enables/Disables individual special tools & weapons.')
 		sections['Tools/Weapons'] = sb
 	end
 
-	for _, ctrl in pairs(mmu.controls) do
+	for _, ctrl in pairs(mmu.Controls) do
 		if ctrl.HelpSection ~= nil then
 			if sections[ctrl.HelpSection] == nil then
 				sections[ctrl.HelpSection] = mmu.createStringBuilder()

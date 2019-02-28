@@ -7,7 +7,7 @@ end
 
 -- define global table before loading main script
 mmu = {}
-mmu.small = true
+mmu.Small = true
 
 -- Function to launch the trainer interface & catch errors.
 local startup = function()

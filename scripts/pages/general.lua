@@ -6,7 +6,7 @@ local checkboxes = {
 	{'Auto End Stage', 'Loads continue screen after turn ends regardless of how many lives are left.',},
 }
 
-if mmu.small then
+if mmu.Small then
 	pgGeneral = mmu.Tabs
 else
 	pgGeneral = mmu.Tabs.addTab()

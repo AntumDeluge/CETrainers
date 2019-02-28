@@ -1,12 +1,12 @@
 
 local tabs = nil
-if mmu.small then
+if mmu.Small then
 	tabs = createPanel(mmu.Frame)
 else
 	tabs = createPageControl(mmu.Frame)
 end
 
-tabs.AnchorSideTop.Control = mmu.processLabel
+tabs.AnchorSideTop.Control = mmu.ProcessLabel
 tabs.AnchorSideTop.Side = asrBottom
 tabs.AnchorSideBottom.Control = mmu.Frame
 tabs.AnchorSideBottom.Side = asrBottom

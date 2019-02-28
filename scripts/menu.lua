@@ -27,7 +27,7 @@ miOpen.onClick = function()
 	if modalResult == 1 and pName ~= nil then
 		local PID = process.attach(pName)
 		if PID ~= nil then
-			mmu.processLabel.setCaption('Attached process: ' .. tostring(PID))
+			mmu.ProcessLabel.setCaption('Attached process: ' .. tostring(PID))
 		end
 	end
 end

@@ -34,8 +34,8 @@ mmu.show = function()
 	mmu.Frame.show()
 
 	-- Show any errors/warnings from startup
-	if #mmu.errors > 0 then
-		for idx, msg in pairs(mmu.errors) do
+	if #mmu.Errors > 0 then
+		for idx, msg in pairs(mmu.Errors) do
 			showMessage(msg)
 		end
 	end
@@ -48,7 +48,7 @@ mmu.addError = function(msg, label)
 		label = 'ERROR'
 	end
 	msg = label .. ': ' .. msg
-	table.insert(mmu.errors, msg)
+	table.insert(mmu.Errors, msg)
 end
 
 --- Alias for mmu.addError(msg, 'WARNING')
@@ -59,7 +59,7 @@ end
 
 function mmu.refreshControls()
 	local pAttached = getOpenedProcessID() ~= 0
-	for _, ctrl in pairs(mmu.controls) do
+	for _, ctrl in pairs(mmu.Controls) do
 		if not pAttached then
 			ctrl.Control.setEnabled(false)
 		elseif ctrl.Record.Type ~= 11 then -- 11 = script?
@@ -215,7 +215,7 @@ function mmu.createControl(ctrltype, rec, parent, section, helpstring)
 			end
 
 			-- add to list of accessible controls
-			table.insert(mmu.controls, ctrl)
+			table.insert(mmu.Controls, ctrl)
 		end
 
 		-- Add help string info.
